@@ -1,7 +1,8 @@
 export const siteConfig = {
   name: "홍천 열목어마을",
   tagline: "자연이 주는 쉼, 다시 살아가는 힘",
-  address: "강원특별자치도 홍천군 내면 명개로 98",
+  address: "강원특별자치도 홍천군 내면 · 정확한 방문 주소 운영자 확인 필요",
+  addressCandidates: ["강원특별자치도 홍천군 내면 명개로 98", "강원특별자치도 홍천군 내면 열목어길 86", "강원특별자치도 홍천군 서석면 마리소리길 57"],
   phone: "",
   phoneNeedsConfirmation: true,
   email: "",
@@ -11,8 +12,11 @@ export const siteConfig = {
   instagram: "",
   reservationUrl: "",
   reservationUrlNeedsConfirmation: true,
-  addressVerified: true,
-  mapUrl: "https://map.kakao.com/link/to/열목어마을,37.8500154882362,128.505857629328",
+  addressVerified: false,
+  structuredAddress: null as string | null,
+  latitude: null,
+  longitude: null,
+  mapUrl: "https://map.naver.com/p/search/홍천%20열목어마을",
 } as const;
 
 export const programs = [

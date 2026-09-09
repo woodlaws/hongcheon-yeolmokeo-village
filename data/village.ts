@@ -1,3 +1,5 @@
+import { siteConfig } from "@/data/site";
+
 export type ContentStatus = "verified" | "needsConfirmation" | "placeholder";
 
 export const villageOverview = [
@@ -106,12 +108,12 @@ export const villageGallery = [
 ] as const;
 
 export const villageVisit = {
-  address: "강원특별자치도 홍천군 내면 명개로 98",
+  address: siteConfig.address,
   driving: "산간 도로와 현장 진입 여건은 출발 전 운영자에게 확인해 주세요.",
   parking: "차량 종류와 방문 인원에 따른 주차 가능 여부는 상담이 필요합니다.",
   transit: "대중교통 연결과 픽업 가능 여부는 일정 확정 전 문의해 주세요.",
-  mapUrl: "https://map.kakao.com/link/to/열목어마을,37.8500154882362,128.505857629328",
-  status: "verified",
+  mapUrl: siteConfig.mapUrl,
+  status: "needsConfirmation",
 } as const;
 
 export const villageFaqs = [

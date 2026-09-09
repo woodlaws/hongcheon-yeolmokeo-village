@@ -29,7 +29,7 @@ function FacilityIcon({ name }: { name: string }) {
 
 export default function StayPage() {
   const breadcrumbJson = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "홈", item: "https://hongcheon-yeolmokeo.vercel.app/" }, { "@type": "ListItem", position: 2, name: "숙소", item: pageUrl }] };
-  const lodgingJson = { "@context": "https://schema.org", "@type": "LodgingBusiness", name: "홍천 열목어마을 숙소", url: pageUrl, description: "홍천의 숲과 계곡 가까이에서 독채, 한옥, 프로그램 연계 체류를 상담할 수 있는 열목어마을 숙소", address: { "@type": "PostalAddress", streetAddress: "내면 명개로 98", addressLocality: "홍천군", addressRegion: "강원특별자치도", addressCountry: "KR" } };
+  const lodgingJson = { "@context": "https://schema.org", "@type": "LodgingBusiness", name: "홍천 열목어마을 숙소", url: pageUrl, description: "홍천의 숲과 계곡 가까이에서 독채, 한옥, 프로그램 연계 체류를 상담할 수 있는 열목어마을 숙소", ...(siteConfig.addressVerified && siteConfig.structuredAddress ? { address: { "@type": "PostalAddress", streetAddress: siteConfig.structuredAddress, addressLocality: "홍천군", addressRegion: "강원특별자치도", addressCountry: "KR" } } : {}) };
   const faqJson = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: stayFaqs.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) };
 
   return <><SiteHeader /><main className="stay-page">

@@ -8,7 +8,7 @@ export const siteConfig = {
   kakao: "",
   instagram: "",
   reservationUrl: "",
-  mapUrl: "https://map.naver.com/p/search/강원%20홍천군%20내면%20명개로%2098",
+  mapUrl: "https://map.kakao.com/link/to/열목어마을,37.8500154882362,128.505857629328",
 } as const;
 
 export const programs = [

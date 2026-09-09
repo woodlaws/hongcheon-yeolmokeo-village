@@ -3,11 +3,15 @@ export const siteConfig = {
   tagline: "자연이 주는 쉼, 다시 살아가는 힘",
   address: "강원특별자치도 홍천군 내면 명개로 98",
   phone: "",
+  phoneNeedsConfirmation: true,
   email: "",
+  emailNeedsConfirmation: true,
   hours: "운영시간 확인 필요",
   kakao: "",
   instagram: "",
   reservationUrl: "",
+  reservationUrlNeedsConfirmation: true,
+  addressVerified: true,
   mapUrl: "https://map.kakao.com/link/to/열목어마을,37.8500154882362,128.505857629328",
 } as const;
 
@@ -16,12 +20,6 @@ export const programs = [
   { slug: "family-experience", title: "가족 농촌 체험", audience: "아이 동반 가족", season: "봄·여름·가을", image: "/images/farm-experience.png", summary: "밭과 숲에서 함께 움직이고 제철 농산물을 만지며 가족의 새로운 추억을 만듭니다.", highlights: ["계절 농작물 체험", "자연 관찰", "간식 만들기", "숲밧줄놀이"], preparation: "흙이 묻어도 되는 옷, 모자, 운동화" },
   { slug: "forest-healing", title: "숲과 계곡 치유", audience: "개인·소그룹", season: "봄·여름·가을", image: "/images/quiet-time-1.png", summary: "1급수 계곡과 백두대간 숲길을 천천히 걸으며 오감을 깨우는 자연 회복 프로그램입니다.", highlights: ["계곡 트레킹", "걷기 명상", "풍욕과 계곡 쉼", "숲 해설"], preparation: "트레킹화, 물병, 계절별 방한·우천 용품" },
   { slug: "healing-food", title: "제철 치유밥상", audience: "가족·단체", season: "사계절", image: "/images/healing-table.jpg", summary: "홍천 내면의 제철 채소와 산약초를 정성껏 차려 몸과 마음을 따뜻하게 채웁니다.", highlights: ["컬러푸드 밥상", "계절 산나물", "탄산약수 활용 음식", "지역 식재료 이야기"], preparation: "알레르기와 식이 제한은 상담 시 미리 알려주세요." },
-] as const;
-
-export const stays = [
-  { name: "보금자리", capacity: "2·3인실 운영 정보 확인", description: "개인과 소가족이 조용히 머물 수 있는 산촌형 숙소입니다.", image: "/images/stay-room.png", status: "객실별 정원·요금 확인 필요" },
-  { name: "비움센터", capacity: "2인실 구성", description: "치유 프로그램 참여자가 머물며 일상의 속도를 내려놓는 공간입니다.", image: "/images/village-arrival.png", status: "객실별 편의시설 확인 필요" },
-  { name: "한옥숙소", capacity: "2·3인실 운영 정보 확인", description: "마을의 자연과 어울리는 전통 분위기의 숙박 공간입니다.", image: "/images/forest-1.jpg", status: "세부 설명 추가 예정" },
 ] as const;
 
 export const itineraries = [

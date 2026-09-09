@@ -5,7 +5,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { VisitPlanner } from "@/components/visit-planner";
-import { itineraries, press, programs, stays, testimonials } from "@/data/site";
+import { itineraries, press, programs, testimonials } from "@/data/site";
+import { stayRooms } from "@/data/stay";
 
 export default function Home() {
   return <>
@@ -36,7 +37,7 @@ export default function Home() {
 
       <section className="stay-time"><div className="container"><header className="section-heading"><p className="section-kicker">SLOW ITINERARY</p><h2>머무는 시간에 따라 달라지는 쉼</h2></header><div className="itinerary-grid">{itineraries.map((plan,index)=><article key={plan.duration}><div className="itinerary-number">0{index+1}</div><p className="meta">{plan.duration}</p><h3>{plan.title}</h3><ul>{plan.items.map(item=><li key={item}>{item}</li>)}</ul><p className="status">{plan.includes}</p><Link href="/guide" className="text-link">자세히 보기 <ArrowRight size={17}/></Link></article>)}</div></div></section>
 
-      <section className="home-section container"><div className="feature-split"><Image src="/images/stay-room.png" alt="열목어마을의 정갈한 객실" width={900} height={680}/><div><p className="section-kicker">STAY</p><h2>숲과 계곡 가까이에서 보내는 편안한 밤</h2><p>보금자리, 비움센터, 한옥숙소로 안내되는 산촌의 잠자리. 객실별 정원과 요금은 희망 일정에 맞춰 확인합니다.</p><ul>{stays.map(stay=><li key={stay.name}><b>{stay.name}</b><span>{stay.capacity}</span></li>)}</ul><div className="inline-actions"><Link href="/stay" className="button button-primary">숙소 자세히 보기</Link><Link href="/contact?type=stay" className="button button-outline">예약 문의</Link></div></div></div></section>
+      <section className="home-section container"><div className="feature-split"><Image src="/images/stay-room.png" alt="열목어마을의 정갈한 객실" width={900} height={680}/><div><p className="section-kicker">STAY</p><h2>숲과 계곡 가까이에서 보내는 편안한 밤</h2><p>보금자리, 비움센터, 한옥숙소로 안내되는 산촌의 잠자리. 객실별 정원과 요금은 희망 일정에 맞춰 확인합니다.</p><ul>{stayRooms.slice(0,3).map(stay=><li key={stay.name}><b>{stay.name}</b><span>{stay.roomConfigurations.join(" · ")}</span></li>)}</ul><div className="inline-actions"><Link href="/stay" className="button button-primary">숙소 자세히 보기</Link><Link href="/contact?type=stay" className="button button-outline">예약 문의</Link></div></div></div></section>
 
       <section className="food-section"><div className="container feature-split reverse"><Image src="/images/healing-table.jpg" alt="지역 제철 식재료로 만든 한식 치유밥상" width={900} height={680}/><div><p className="section-kicker">HEALING TABLE</p><h2>지역의 제철 재료로 차리는 건강한 한 끼</h2><p>홍천 내면의 농산물과 산나물, 계절에 따라 달라지는 식재료를 정성스러운 한식으로 만납니다.</p><div className="pill-list"><span>지역 농산물</span><span>정성스러운 한식</span><span>계절별 밥상</span><span>단체 식사 가능 여부 확인 필요</span></div><Link href="/programs/healing-food" className="text-link">치유밥상 알아보기 <ArrowRight size={17}/></Link></div></div></section>
 

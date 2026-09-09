@@ -1,0 +1,25 @@
+# dependencies
+/node_modules/
+
+# Next.js output
+/.next/
+/out/
+
+# local tooling and deployment state
+/.openai/
+/.vinext/
+/.wrangler/
+/.vercel/
+/dist/
+/outputs/
+
+# environment and logs
+.env*
+!.env.example
+*.log
+*.tsbuildinfo
+next-env.d.ts
+
+# operating system
+.DS_Store
+Thumbs.db

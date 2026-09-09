@@ -5,7 +5,7 @@ import { FormEvent, useMemo, useState } from "react";
 import { AlertCircle, Send } from "lucide-react";
 
 const typeMap: Record<string,string> = { stay:"숙박 문의", "stay-only":"숙박 문의", "stay-package":"숙박 패키지 문의", workation:"워케이션 문의", group:"단체 견적 문의", "group-stay":"단체 숙박 견적 문의" };
-const programMap: Record<string,string> = { "burnout-retreat":"직장인 번아웃 쉼", "family-experience":"가족 농촌 체험", "forest-healing":"숲과 계곡 치유", "healing-food":"제철 치유밥상" };
+const programMap: Record<string,string> = { "burnout-retreat":"직장인 번아웃 쉼", "family-experience":"가족 농촌 체험", "forest-healing":"숲과 계곡 치유", "healing-food":"제철 치유밥상", "corporate-refresh":"기업 리프레시 워크숍", "public-training":"공공기관 연수", "firefighter-recovery":"소방·안전 종사자 회복 프로그램", "welfare-health":"복지·보건기관 프로그램", "school-education":"학교·교육기관 농촌체험", "rural-workation":"농촌형 워케이션" };
 const roomMap: Record<string,string> = { bogumjari:"보금자리", "bieum-center":"비움센터", hanok:"한옥 숙소", workation:"워케이션 객실(구성 확인 필요)" };
 const stayModeMap: Record<string,string> = { "stay-only":"숙소만 이용", "stay-package":"숙박＋치유 프로그램", "healing-trip":"1박 2일 치유여행", workation:"2박 3일 워케이션", "group-stay":"기업·기관 단체 숙박" };
 

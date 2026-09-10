@@ -20,6 +20,7 @@ import { MobileCta } from "@/components/mobile-cta";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { VillageGallery } from "@/components/village-gallery";
+import { VillageSubnav } from "@/components/village-subnav";
 import {
   natureMoments,
   villageCases,
@@ -109,6 +110,7 @@ export default function VillagePage() {
             </div>
           </div>
         </section>
+        <VillageSubnav />
 
         <section className="village-section village-overview" aria-labelledby="village-overview-title">
           <div className="container">

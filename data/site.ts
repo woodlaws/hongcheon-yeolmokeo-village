@@ -3,22 +3,22 @@ const defaultNaverBookingUrl = "https://m.booking.naver.com/booking/3/bizes/8533
 export const siteConfig = {
   name: "홍천 열목어마을",
   tagline: "자연이 주는 쉼, 다시 살아가는 힘",
-  address: "강원특별자치도 홍천군 내면 · 정확한 방문 주소 운영자 확인 필요",
+  address: "강원특별자치도 홍천군 내면 명개로 98",
   addressCandidates: ["강원특별자치도 홍천군 내면 명개로 98", "강원특별자치도 홍천군 내면 열목어길 86", "강원특별자치도 홍천군 서석면 마리소리길 57"],
   contact: {
     email: "mgrbest98@naver.com",
     emailHref: "mailto:mgrbest98@naver.com",
-    phoneDisplay: "010-7431-5600",
-    phoneHref: "tel:01074315600",
+    phoneDisplay: "010-7431-9600",
+    phoneHref: "tel:01074319600",
   },
   hours: "운영시간 확인 필요",
   instagram: "",
   naverBookingUrl: process.env.NEXT_PUBLIC_NAVER_BOOKING_URL?.trim() || defaultNaverBookingUrl,
-  addressVerified: false,
-  structuredAddress: null as string | null,
+  addressVerified: true,
+  structuredAddress: "강원특별자치도 홍천군 내면 명개로 98",
   latitude: null,
   longitude: null,
-  mapUrl: "https://map.naver.com/p/search/홍천%20열목어마을",
+  mapUrl: "https://map.naver.com/p/search/%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%ED%99%8D%EC%B2%9C%EA%B5%B0%20%EB%82%B4%EB%A9%B4%20%EB%AA%85%EA%B0%9C%EB%A1%9C%2098",
 } as const;
 
 export interface Program {

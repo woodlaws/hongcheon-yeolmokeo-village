@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "@/components/static-link";
 import { Menu } from "lucide-react";
 import { NaverBookingLink } from "@/components/booking-links";
@@ -7,11 +8,15 @@ const menu = [["마을 이야기", "/village"], ["치유 프로그램", "/progra
 function Brand() {
   return (
     <Link href="/" className="brand" aria-label="홍천 열목어마을 홈">
-      <svg className="brand-mark" viewBox="0 0 64 48" aria-hidden="true">
-        <path d="M5 32 23 12l9 11 7-8 20 17" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8 36c8-4 14 4 22 0s14 4 26-1" fill="none" stroke="#4E8791" strokeWidth="3" strokeLinecap="round" />
-      </svg>
-      <span><strong>홍천 열목어마을</strong><small>자연이 주는 쉼, 다시 살아가는 힘</small></span>
+      <Image
+        className="brand-logo"
+        src="/images/hongcheon-yeolmokeo-logo.png"
+        alt="홍천 열목어마을"
+        width={1280}
+        height={796}
+        sizes="(max-width: 767px) 124px, 160px"
+        priority
+      />
     </Link>
   );
 }

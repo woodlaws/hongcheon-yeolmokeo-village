@@ -20,6 +20,7 @@ import { NaverBookingLink, PhoneReservationLink } from "@/components/booking-lin
 import { MobileCta } from "@/components/mobile-cta";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { TravelBanner } from "@/components/travel-banner";
 import { siteConfig } from "@/data/site";
 import styles from "./page.module.css";
 
@@ -161,6 +162,7 @@ export default function StayworkPage() {
       <div><p className={styles.eyebrow}>BOOKING & CONTACT</p><h2 id="booking-title">현재 일정과 운영 여부를 확인해 주세요</h2><p>네이버 예약 상품의 현재 일정과 가격이 홈페이지 안내와 다를 경우 네이버 예약 및 담당자 안내를 우선합니다.</p></div>
       <div className={styles.contactCard}><NaverBookingLink className="button button-primary" position="staywork-bottom">네이버에서 예약 확인</NaverBookingLink><PhoneReservationLink className="button button-outline" position="staywork-bottom"><Phone size={17} aria-hidden="true" />전화로 문의</PhoneReservationLink><a className="button button-outline" href={emailHref}><Mail size={17} aria-hidden="true" />이메일 문의</a><dl><div><dt>예약문의</dt><dd><a href={siteConfig.contact.phoneHref}>{siteConfig.contact.phoneDisplay}</a></dd></div><div><dt>이메일</dt><dd><a href={emailHref}>{siteConfig.contact.email}</a></dd></div></dl></div>
     </div></section>
+    <div className="container"><TravelBanner /></div>
     <section className={styles.backLink}><Link href="/programs">다른 치유 프로그램도 살펴보기</Link></section>
   </main><SiteFooter /><MobileCta /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} /></>;
 }

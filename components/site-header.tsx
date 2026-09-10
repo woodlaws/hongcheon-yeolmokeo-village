@@ -3,7 +3,7 @@ import Link from "@/components/static-link";
 import { Menu } from "lucide-react";
 import { NaverBookingLink } from "@/components/booking-links";
 
-const menu = [["마을 이야기", "/village"], ["치유 프로그램", "/programs"], ["숙소", "/stay"], ["단체·워크숍", "/group"], ["여행 안내", "/guide"], ["소식", "/stories"]];
+const menu = [["마을 이야기", "/village"], ["치유 프로그램", "/programs"], ["숙소", "/stay"], ["단체·워크숍", "/group"], ["여행 안내", "/guide"], ["주변 여행", "/travel"], ["소식", "/stories"]];
 
 function Brand() {
   return (

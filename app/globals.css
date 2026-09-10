@@ -126,3 +126,12 @@ main:has(.contact-request-section) .page-hero{min-height:330px}.contact-request-
 .village-promise h2{word-break:keep-all;overflow-wrap:normal}
 .village-promise h2 span{display:block;white-space:nowrap}
 @media(max-width:767px){.village-promise h2{font-size:clamp(28px,8.5vw,36px)}}
+
+/* Yeolmokeo real-photo introduction */
+.fish-intro>.container{grid-template-columns:minmax(0,500px) minmax(0,1fr)}
+.fish-real-photo{min-width:0;margin:0}
+.fish-real-photo img{width:100%;height:auto;display:block;object-fit:contain}
+.fish-real-photo figcaption{padding:10px 2px 0;color:#66736c;font-size:13px}
+.fish-intro h2{word-break:keep-all}
+.fish-intro-description{margin:0 0 24px;color:#405048;font-size:16px;line-height:1.85}
+@media(max-width:767px){.fish-intro>.container{grid-template-columns:1fr}.fish-real-photo{max-width:519px;margin-inline:auto}.fish-intro-description{font-size:16px}}

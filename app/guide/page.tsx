@@ -24,7 +24,7 @@ const quickFacts = [
   { icon: Users, label: "추천 대상", value: "개인·가족·직장인·단체" },
   { icon: Trees, label: "주요 경험", value: "숲·계곡·치유·밥상" },
   { icon: Car, label: "이동 방법", value: "자가용 중심·대중교통 확인" },
-  { icon: Check, label: "예약 방식", value: "숙박·프로그램 사전 상담" },
+  { icon: Check, label: "예약 방식", value: "일반 객실은 네이버 예약 · 결합 일정은 맞춤 상담" },
 ] as const;
 
 export default function GuidePage() {

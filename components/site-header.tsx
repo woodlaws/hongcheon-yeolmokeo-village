@@ -1,5 +1,6 @@
 import Link from "@/components/static-link";
 import { Menu } from "lucide-react";
+import { NaverBookingLink } from "@/components/booking-links";
 
 const menu = [["마을 이야기", "/village"], ["치유 프로그램", "/programs"], ["숙소", "/stay"], ["단체·워크숍", "/group"], ["여행 안내", "/guide"], ["소식", "/stories"]];
 
@@ -22,10 +23,10 @@ export function SiteHeader() {
       <nav className="desktop-nav" aria-label="주요 메뉴">{menu.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</nav>
       <div className="header-actions">
         <Link href="/contact" className="button button-outline">문의하기</Link>
-        <Link href="/contact?type=stay" className="button button-primary">예약하기</Link>
+        <NaverBookingLink className="button button-primary" position="header-desktop">네이버 예약</NaverBookingLink>
         <details className="mobile-menu"><summary aria-label="메뉴 열기"><Menu size={24} /></summary><nav aria-label="모바일 메뉴">
           {menu.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
-          <Link href="/contact">문의하기</Link><Link href="/contact?type=stay">예약 상담</Link>
+          <Link href="/contact">문의하기</Link><NaverBookingLink position="header-mobile">네이버 예약</NaverBookingLink>
         </nav></details>
       </div>
     </div></header>

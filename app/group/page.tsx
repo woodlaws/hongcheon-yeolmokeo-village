@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowRight, BedDouble, BriefcaseBusiness, Check, ChevronRight, CircleHelp, Clock3, ExternalLink, Handshake, HeartPulse, Info, Leaf, PhoneOff, Printer, Sparkles, Trees, Users, Utensils } from "lucide-react";
+import { ArrowRight, BedDouble, BriefcaseBusiness, Check, ChevronRight, CircleHelp, Clock3, ExternalLink, Handshake, HeartPulse, Info, Leaf, Phone, Printer, Sparkles, Trees, Users, Utensils } from "lucide-react";
 import Link from "@/components/static-link";
 import { GroupQuoteForm } from "@/components/group-quote-form";
 import { MobileCta } from "@/components/mobile-cta";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { groupAudiences, groupCases, groupElements, groupFaqs, groupProcess, groupSchedules, groupSummary, groupTrustHistory } from "@/data/group";
+import { siteConfig } from "@/data/site";
 
 const pageUrl = "https://hongcheon-yeolmokeo.vercel.app/group";
 export const metadata: Metadata = {
@@ -51,7 +52,7 @@ export default function GroupPage() {
 
     <section className="group-section group-summary" aria-labelledby="summary-title"><div className="container"><div className="group-heading"><p className="section-kicker">FOR DECISION MAKERS</p><h2 id="summary-title">담당자용 한눈에 보기</h2><p>내부 검토와 보고에 필요한 핵심 조건을 한 표로 정리했습니다.</p></div><div className="group-summary-table"><table><tbody>{groupSummary.map(([label, value]) => <tr key={label}><th>{label}</th><td>{value}</td></tr>)}</tbody></table></div><div className="group-summary-actions"><button type="button" className="button group-disabled" disabled><Printer size={17} /> 단체 프로그램 소개서 준비 중</button><a href="#quote" className="button button-primary">견적에 필요한 정보 입력</a></div></div></section>
 
-    <section className="group-section group-quote" id="quote" aria-labelledby="quote-title"><div className="container group-quote-layout"><aside><p className="section-kicker">REQUEST A PROPOSAL</p><h2 id="quote-title">단체 프로그램 견적 문의</h2><p>기관 유형, 목적, 날짜와 인원을 알려주시면 현재 가능한 숙박·식사·프로그램 조합을 확인할 수 있습니다.</p><div><span><Clock3 />희망일과 대체일</span><span><Users />예상 인원과 참가자 특성</span><span><Sparkles />필요한 숙박·식사·공간</span></div><p className="group-contact-pending"><PhoneOff size={18} />공식 전화번호 확인 전이므로 온라인 문의를 우선합니다.</p></aside><GroupQuoteForm /></div></section>
+    <section className="group-section group-quote" id="quote" aria-labelledby="quote-title"><div className="container group-quote-layout"><aside><p className="section-kicker">REQUEST A PROPOSAL</p><h2 id="quote-title">단체 프로그램 견적 문의</h2><p>기관 유형, 목적, 날짜와 인원을 알려주시면 현재 가능한 숙박·식사·프로그램 조합을 확인할 수 있습니다.</p><div><span><Clock3 />희망일과 대체일</span><span><Users />예상 인원과 참가자 특성</span><span><Sparkles />필요한 숙박·식사·공간</span></div><p className="group-contact-pending"><Phone size={18} /><a href={siteConfig.contact.phoneHref}>전화 상담 {siteConfig.contact.phoneDisplay}</a></p></aside><GroupQuoteForm /></div></section>
 
     <section className="group-section group-faq" aria-labelledby="faq-title"><div className="container"><div className="group-heading"><p className="section-kicker">FAQ</p><h2 id="faq-title">기관 담당자가 자주 묻는 질문</h2><p>확정되지 않은 인원·장비·증빙 조건은 상담이 필요하다고 안내합니다.</p></div><div className="group-faq-list">{groupFaqs.map(([question, answer]) => <details key={question}><summary>{question}<CircleHelp size={19} /></summary><p>{answer}</p></details>)}</div><div className="group-related"><Link href="/programs">프로그램</Link><Link href="/stay">숙소</Link><Link href="/guide">여행 안내</Link><Link href="/contact?type=group">문의 페이지</Link></div></div></section>
 

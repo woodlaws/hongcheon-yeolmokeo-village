@@ -1,24 +1,12 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { CalendarDays, Search, Users } from "lucide-react";
-import { FormEvent, useState } from "react";
+import { CalendarDays } from "lucide-react";
+import { NaverBookingLink } from "@/components/booking-links";
 
 export function VisitPlanner() {
-  const router = useRouter();
-  const [visitType, setVisitType] = useState("personal");
-  const [date, setDate] = useState("");
-  const [guests, setGuests] = useState("2");
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    router.push(`/contact?${new URLSearchParams({ visitType, date, guests }).toString()}`);
-  }
   return (
-    <form className="visit-planner container" onSubmit={submit} aria-label="방문 조건 선택">
-      <label><span>방문 유형</span><select value={visitType} onChange={(event) => setVisitType(event.target.value)}><option value="personal">개인 휴식</option><option value="family">가족 체험</option><option value="company">기업·기관 워크숍</option><option value="school">학교·단체 체험</option></select></label>
-      <label><span><CalendarDays size={18} /> 희망 날짜</span><input type="date" value={date} onChange={(event) => setDate(event.target.value)} /></label>
-      <label><span><Users size={18} /> 인원</span><input type="number" min="1" max="200" value={guests} onChange={(event) => setGuests(event.target.value)} /></label>
-      <button className="planner-submit" type="submit"><Search size={21} /> 예약 가능 여부 확인</button>
-    </form>
+    <section className="visit-planner container" aria-label="네이버 예약 안내">
+      <CalendarDays size={30} aria-hidden="true" />
+      <div><strong>날짜와 객실은 네이버 예약에서 확인할 수 있습니다</strong><span>실시간 예약 가능 일정, 객실 요금 및 결제 정보를 확인해 주세요.</span></div>
+      <NaverBookingLink className="planner-submit" position="home-planner">네이버에서 예약 가능 여부 확인</NaverBookingLink>
+    </section>
   );
 }

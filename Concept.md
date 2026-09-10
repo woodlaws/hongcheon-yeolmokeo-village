@@ -42,6 +42,7 @@
 - `/village/greeting`: 방문객을 맞이하는 마을 소개형 인사말
 - `/village/vision`: 자연 보전·휴식·생태교육·주민 상생의 비전 제안
 - `/village/yeolmokeo`: 공식 생태 자료 기반의 열목어 읽을거리
+- `/village/facilities`: 보금자리·사랑방·교육 공간과 확인된 공용시설 안내
 - `/village/location`: 공식 주소·지도·전화와 방문 전 확인 안내
 - `/programs`: 고객·계절별 프로그램 탐색과 준비 안내
 - `/programs/[slug]`: 상세 일정과 대상, 준비물, 상담 CTA

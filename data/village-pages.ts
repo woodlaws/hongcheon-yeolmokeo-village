@@ -2,6 +2,7 @@ export const villageNavigation = [
   { label: "인사말", href: "/village/greeting", description: "쉬러 오는 분께 전하는 환영" },
   { label: "마을 비전", href: "/village/vision", description: "자연과 사람을 잇는 네 가지 가치" },
   { label: "열목어 이야기", href: "/village/yeolmokeo", description: "차가운 물에 사는 생명의 이야기" },
+  { label: "시설 안내", href: "/village/facilities", description: "머무르고 함께하는 공간 안내" },
   { label: "찾아오시는 길", href: "/village/location", description: "주소·지도·방문 전 확인" },
 ] as const;
 

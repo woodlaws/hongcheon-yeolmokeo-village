@@ -35,7 +35,6 @@ export function SiteHeader() {
       <div className="village-menu" ref={villageRef}>
         <button ref={villageButtonRef} type="button" className={isVillage ? "is-current" : ""} aria-expanded={villageOpen} aria-haspopup="true" aria-controls="village-desktop-submenu" onClick={() => setVillageOpen((open) => !open)}>마을 이야기 <ChevronDown size={15} aria-hidden="true" /></button>
         {villageOpen && <div id="village-desktop-submenu" className="village-dropdown">
-          <Link href="/village" className={pathname === "/village" ? "is-current" : ""}>마을 이야기 전체</Link>
           {villageNavigation.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined} className={pathname === item.href ? "is-current" : ""}>{item.label}<small>{item.description}</small></Link>)}
         </div>}
       </div>
@@ -47,7 +46,7 @@ export function SiteHeader() {
       <button ref={mobileButtonRef} type="button" className="mobile-menu-trigger" aria-label={mobileOpen ? "메뉴 닫기" : "메뉴 열기"} aria-expanded={mobileOpen} aria-controls="mobile-site-menu" onClick={() => setMobileOpen((open) => !open)}>{mobileOpen ? <X size={24} /> : <Menu size={24} />}</button>
       {mobileOpen && <nav id="mobile-site-menu" className="mobile-menu-panel" aria-label="모바일 메뉴">
         <button type="button" className={isVillage ? "is-current" : ""} aria-expanded={mobileVillageOpen} aria-controls="village-mobile-submenu" onClick={() => setMobileVillageOpen((open) => !open)}>마을 이야기 <ChevronDown size={17} aria-hidden="true" /></button>
-        {mobileVillageOpen && <div id="village-mobile-submenu" className="mobile-village-submenu"><Link href="/village" aria-current={pathname === "/village" ? "page" : undefined}>마을 이야기 전체</Link>{villageNavigation.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}</div>}
+        {mobileVillageOpen && <div id="village-mobile-submenu" className="mobile-village-submenu">{villageNavigation.map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}</div>}
         {menu.map(([label, href]) => <Link key={href} href={href} aria-current={pathname.startsWith(href) ? "page" : undefined}>{label}</Link>)}
         <Link href="/contact">문의하기</Link><NaverBookingLink position="header-mobile">네이버 예약</NaverBookingLink>
       </nav>}

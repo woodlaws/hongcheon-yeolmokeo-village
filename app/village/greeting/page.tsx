@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "인사말｜홍천 열목어마을",
 export default function GreetingPage() {
   return <VillagePageFrame eyebrow="WELCOME TO OUR VILLAGE" title="자연 곁에서 쉬어가는 시간, 열목어마을에 오신 것을 환영합니다" description="서두르던 걸음을 잠시 늦추고, 나와 곁의 사람에게 다시 가까워지는 산촌의 시간입니다." imageAlt="홍천 열목어마을 건물과 넓은 잔디마당 전경">
     <section className="village-greeting-section"><div className="container village-greeting-layout">
-      <div className="village-greeting-photo"><Image src="/images/village-main-hero.jpg" fill sizes="(max-width: 767px) 100vw, 48vw" alt="파란 하늘과 산을 배경으로 자리한 홍천 열목어마을 건물과 잔디마당" /></div>
+      <div className="village-greeting-photo"><Image src="/images/yeolmokeo-village-entrance.png" width={1295} height={1738} sizes="(max-width: 767px) calc(100vw - 40px), 420px" alt="물고기 조형물과 열목어마을 이름이 있는 마을 입구 표지판" /></div>
       <article><p className="section-kicker">A WARM WELCOME</p><h2>잘 쉬었다는 마음을 안고 돌아가실 수 있도록</h2>
         <p>홍천의 산길을 따라 열목어마을에 닿으면, 도시에서 익숙했던 속도와 소리가 조금씩 멀어집니다. 맑은 물이 흐르고 숲의 바람이 머무는 이곳에서 잠시 호흡을 고르시길 바랍니다.</p>
         <p>열목어마을은 특별한 일을 많이 해야만 좋은 여행이 된다고 생각하지 않습니다. 계곡물 소리를 듣고, 제철 재료로 마련한 밥상을 나누고, 조용한 산촌의 아침을 맞는 것만으로도 충분한 쉼이 될 수 있습니다.</p>

@@ -135,3 +135,9 @@ main:has(.contact-request-section) .page-hero{min-height:330px}.contact-request-
 .fish-intro h2{word-break:keep-all}
 .fish-intro-description{margin:0 0 24px;color:#405048;font-size:16px;line-height:1.85}
 @media(max-width:767px){.fish-intro>.container{grid-template-columns:1fr}.fish-real-photo{max-width:519px;margin-inline:auto}.fish-intro-description{font-size:16px}}
+
+/* Greeting entrance portrait */
+.village-greeting-layout{grid-template-columns:minmax(360px,420px) minmax(0,620px);justify-content:center}
+.village-greeting-photo{position:static;min-width:0;min-height:0}
+.village-greeting-photo img{width:100%;height:auto;display:block;object-fit:contain;object-position:center}
+@media(max-width:767px){.village-greeting-layout{grid-template-columns:1fr}.village-greeting-photo{max-width:440px;margin-inline:auto;aspect-ratio:auto}}

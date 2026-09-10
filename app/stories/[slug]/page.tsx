@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { StoryShare } from "@/components/story-share";
 import { formatStoryDate, getStory, stories } from "@/data/stories";
+import { StoryRelatedPrograms } from "@/components/program-content";
 import { notFound } from "next/navigation";
 
 const siteUrl = "https://hongcheon-yeolmokeo.vercel.app";
@@ -49,6 +50,7 @@ export default async function StoryDetailPage({ params }: StoryPageProps) {
       <div className="story-article-container story-detail-body">
         {story.editorialNote && <aside className="story-editorial-note"><Info size={20} aria-hidden="true" /><p><b>콘텐츠 안내</b>{story.editorialNote}</p></aside>}
         {story.sections.map((section, index) => <section key={section.heading}><h2>{section.heading}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{index === 0 && <blockquote>{story.pullQuote}</blockquote>}</section>)}
+        <StoryRelatedPrograms storySlug={story.slug} />
         <aside className="story-program"><p>RELATED PROGRAM</p><h2>{story.relatedProgram.title}</h2><span>{story.relatedProgram.description}</span><Link href={story.relatedProgram.href} className="button button-primary">{story.relatedProgram.label} <ArrowRight size={17} aria-hidden="true" /></Link></aside>
         {story.sources.length > 0 && <section className="story-sources"><h2>관련 자료와 출처</h2><p>외부 자료의 사실을 확인해 새로 작성했으며, 현재 운영 여부는 마을에 별도 확인해야 합니다.</p><ul>{story.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label}<ExternalLink size={15} aria-label="새 창에서 열기" /></a></li>)}</ul></section>}
         <StoryShare title={story.title} />

@@ -39,11 +39,11 @@ export interface Program {
 }
 
 export const programs: Program[] = [
-  { slug: "98-staywork", title: "98 스테이워크", category: "웰니스 워케이션", audience: "원격근무자·크리에이터·소규모 팀", season: "사전 일정 상담", duration: "2박 3일", image: "/images/programs/98-staywork-poster.png", summary: "숲에서 일하고 자연에서 쉬는 체류형 워케이션", highlights: ["공유 업무공간", "숙박과 지역 제철 식사", "세 가지 농촌 치유 프로그램", "다과 및 휴식 공간"], preparation: "희망 날짜와 인원을 알려주시면 적용 가능한 일정과 객실을 안내해 드립니다." },
+  { slug: "98-staywork", title: "98 스테이워크", category: "웰니스 워케이션", audience: "원격근무자·크리에이터·소규모 팀", season: "사전 일정 상담", duration: "2박 3일", image: "/images/group/rural-workation.webp", summary: "숲에서 일하고 자연에서 쉬는 체류형 워케이션", highlights: ["공유 업무공간", "숙박과 지역 제철 식사", "세 가지 농촌 치유 프로그램", "다과 및 휴식 공간"], preparation: "희망 날짜와 인원을 알려주시면 적용 가능한 일정과 객실을 안내해 드립니다." },
   { slug: "burnout-retreat", title: "직장인 번아웃 쉼", audience: "직장인·자영업자", season: "사계절", image: "/images/quiet-time-3.png", summary: "디지털 기기와 업무의 속도를 내려놓고 숲, 호흡, 소리 명상으로 나의 리듬을 되찾습니다.", highlights: ["디지털 디톡스", "싱잉볼 테라피", "약초 족욕", "별빛 명상"], preparation: "편한 복장, 개인 세면도구, 계곡 활동용 신발" },
   { slug: "family-experience", title: "가족 농촌 체험", audience: "아이 동반 가족", season: "봄·여름·가을", image: "/images/farm-experience.png", summary: "밭과 숲에서 함께 움직이고 제철 농산물을 만지며 가족의 새로운 추억을 만듭니다.", highlights: ["계절 농작물 체험", "자연 관찰", "간식 만들기", "숲밧줄놀이"], preparation: "흙이 묻어도 되는 옷, 모자, 운동화" },
-  { slug: "forest-healing", title: "숲과 계곡 치유", audience: "개인·소그룹", season: "봄·여름·가을", image: "/images/quiet-time-1.png", summary: "1급수 계곡과 백두대간 숲길을 천천히 걸으며 오감을 깨우는 자연 회복 프로그램입니다.", highlights: ["계곡 트레킹", "걷기 명상", "풍욕과 계곡 쉼", "숲 해설"], preparation: "트레킹화, 물병, 계절별 방한·우천 용품" },
-  { slug: "healing-food", title: "제철 치유밥상", audience: "가족·단체", season: "사계절", image: "/images/healing-table.jpg", summary: "홍천 내면의 제철 채소와 산약초를 정성껏 차려 몸과 마음을 따뜻하게 채웁니다.", highlights: ["컬러푸드 밥상", "계절 산나물", "탄산약수 활용 음식", "지역 식재료 이야기"], preparation: "알레르기와 식이 제한은 상담 시 미리 알려주세요." },
+  { slug: "forest-healing", title: "숲과 계곡 치유", audience: "개인·소그룹", season: "봄·여름·가을", image: "/images/group/element-nature.webp", summary: "1급수 계곡과 백두대간 숲길을 천천히 걸으며 오감을 깨우는 자연 회복 프로그램입니다.", highlights: ["계곡 트레킹", "걷기 명상", "풍욕과 계곡 쉼", "숲 해설"], preparation: "트레킹화, 물병, 계절별 방한·우천 용품" },
+  { slug: "healing-food", title: "제철 치유밥상", audience: "가족·단체", season: "사계절", image: "/images/group/element-life.webp", summary: "홍천 내면의 제철 채소와 산약초를 정성껏 차려 몸과 마음을 따뜻하게 채웁니다.", highlights: ["컬러푸드 밥상", "계절 산나물", "탄산약수 활용 음식", "지역 식재료 이야기"], preparation: "알레르기와 식이 제한은 상담 시 미리 알려주세요." },
 ];
 
 export const itineraries = [

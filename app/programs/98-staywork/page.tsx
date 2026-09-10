@@ -21,6 +21,7 @@ import { MobileCta } from "@/components/mobile-cta";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TravelBanner } from "@/components/travel-banner";
+import { ProgramActivityGallery, ProgramRelatedStories } from "@/components/program-content";
 import { siteConfig } from "@/data/site";
 import styles from "./page.module.css";
 
@@ -125,6 +126,8 @@ export default function StayworkPage() {
       <div><p>98 스테이워크는 청정한 농촌 자연 속에서 업무와 휴식을 함께 경험하도록 구성된 2박 3일 워케이션 프로그램입니다.</p><p>도심의 반복되는 일상에서 잠시 벗어나 숲과 계곡 가까이에서 업무에 집중하고, 프로그램과 식사를 통해 몸과 마음에 여유를 더하는 시간을 제공합니다.</p><p>단순히 장소만 옮겨 일하는 것이 아니라 일, 휴식, 자연, 식사를 하나의 일정으로 경험하는 체류형 프로그램입니다.</p></div>
     </div></section>
 
+    <ProgramActivityGallery programSlug="98-staywork" />
+
     <section className={styles.section} aria-labelledby="spaces-title"><div className="container">
       <SectionHeading eyebrow="WORK & STAY SPACE" title="일할 때는 집중하고, 쉴 때는 온전히 쉬는 공간" />
       <div className={styles.spaceGrid}>{spaces.map(({ icon: Icon, title: itemTitle, text, note }) => <article key={itemTitle}><span><Icon aria-hidden="true" /></span><h3>{itemTitle}</h3><p>{text}</p>{note ? <small>{note}</small> : null}</article>)}</div>
@@ -157,6 +160,8 @@ export default function StayworkPage() {
       <div><p>2 NIGHTS · 3 DAYS</p><h2 id="price-title">지금, 나를 회복하는 워케이션을 시작하세요</h2><div className={styles.price}><strong>295,000원</strong><span>5인 이상 운영 확정</span></div><p className={styles.priceNote}>공개된 프로그램 안내 기준이며 가격 적용 기준과 현재 운영 여부는 예약 전 확인해 주세요.</p></div>
       <div className={styles.includes}><h3>포함사항</h3><ul><li><Check />2박 3일 숙박</li><li><Check />공유 업무공간 자유 이용</li><li><Check />지역 제철 식사를 활용한 삼시세끼</li><li><Check />세 가지 농촌 치유 프로그램</li><li><Check />다과 및 휴식 공간</li></ul><p>객실 형태는 프라이빗 또는 혼용 형태 중 인원과 운영 상황에 따라 안내됩니다.</p></div>
     </div></section>
+
+    <ProgramRelatedStories programSlug="98-staywork" />
 
     <section className={styles.booking} aria-labelledby="booking-title"><div className={`container ${styles.bookingGrid}`}>
       <div><p className={styles.eyebrow}>BOOKING & CONTACT</p><h2 id="booking-title">현재 일정과 운영 여부를 확인해 주세요</h2><p>네이버 예약 상품의 현재 일정과 가격이 홈페이지 안내와 다를 경우 네이버 예약 및 담당자 안내를 우선합니다.</p></div>

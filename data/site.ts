@@ -12,7 +12,10 @@ export const siteConfig = {
     phoneHref: "tel:01074319600",
   },
   hours: "방문 전 전화 문의",
-  instagram: "",
+  socials: [
+    { id: "naver-blog", name: "네이버 블로그", href: "https://blog.naver.com/mgrbest98", title: "블로그로 만나는 마을 이야기", description: "열목어마을의 소식과 이야기를 만나보세요.", buttonLabel: "블로그 방문하기" },
+    { id: "instagram", name: "인스타그램", href: "https://www.instagram.com/lenokvillage", title: "사진으로 만나는 열목어마을", description: "마을의 풍경과 일상을 사진으로 만나보세요.", buttonLabel: "인스타그램 방문하기" },
+  ],
   naverBookingUrl: process.env.NEXT_PUBLIC_NAVER_BOOKING_URL?.trim() || defaultNaverBookingUrl,
   addressVerified: true,
   structuredAddress: officialAddress,

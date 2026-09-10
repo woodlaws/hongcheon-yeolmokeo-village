@@ -6,7 +6,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { VisitPlanner } from "@/components/visit-planner";
 import { NaverBookingLink } from "@/components/booking-links";
-import { itineraries, press, programs } from "@/data/site";
+import { SocialLogo } from "@/components/social-logo";
+import { itineraries, press, programs, siteConfig } from "@/data/site";
 import { stayRooms } from "@/data/stay";
 import { travelAttractions } from "@/data/travel";
 
@@ -53,6 +54,8 @@ export default function Home() {
       <section className="food-section"><div className="container feature-split reverse"><Image src="/images/healing-table.jpg" alt="지역 제철 식재료로 만든 한식 치유밥상" width={900} height={680}/><div><p className="section-kicker">HEALING TABLE</p><h2>지역의 제철 재료로 차리는 건강한 한 끼</h2><p>홍천 내면의 농산물과 산나물, 계절에 따라 달라지는 식재료를 정성스러운 한식으로 만납니다.</p><div className="pill-list"><span>지역 농산물</span><span>정성스러운 한식</span><span>계절별 밥상</span><span>단체 식사는 희망 날짜·인원 상담</span></div><Link href="/programs/healing-food" className="text-link">치유밥상 알아보기 <ArrowRight size={17}/></Link></div></div></section>
 
       <section className="trust-section"><div className="container"><header className="section-heading left"><p className="section-kicker">TRUST & RECORDS</p><h2>마을이 쌓아 온 치유의 기록</h2><p>확인된 공공기관 자료와 언론 보도를 바탕으로 소개합니다.</p></header><div className="trust-grid">{press.map((item,index)=><a href={item.href} target="_blank" rel="noreferrer" key={item.href}><span>0{index+1}</span><p>{item.label}</p><h3>{item.title}</h3><small>{item.source}</small></a>)}</div></div></section>
+
+      <section className="home-social-section" aria-labelledby="home-social-title"><div className="container"><header className="section-heading"><p className="section-kicker">VILLAGE SOCIAL</p><h2 id="home-social-title">열목어마을의 일상을 만나보세요</h2><p>블로그와 인스타그램에서 마을의 소식과 풍경을 살펴보세요.</p></header><div className="home-social-grid">{siteConfig.socials.map((social) => <a className={`home-social-card home-social-${social.id}`} key={social.id} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`${social.buttonLabel} · 새 탭에서 열기`}><SocialLogo platform={social.id} /><div><p>{social.name}</p><h3>{social.title}</h3><span>{social.description}</span><strong>{social.buttonLabel} <ArrowRight size={17} /></strong></div></a>)}</div></div></section>
 
       <section className="final-cta"><Image src="/images/village-main-hero.jpg" alt="홍천 열목어마을 건물과 잔디마당 전경" fill sizes="100vw"/><div/><div className="container"><p>좋은 쉼이, 다시 좋은 나를 만듭니다.</p><h2>이번 주말, 홍천에서 제대로 쉬어보세요</h2><span>지금, 나를 위한 쉼을 계획할 시간입니다.</span><div><Link href="/contact" className="button button-light">방문 상담하기</Link><Link href="/contact?type=group" className="button button-ghost">단체 견적 문의</Link></div></div></section>
     </main>

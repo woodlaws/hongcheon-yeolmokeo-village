@@ -17,7 +17,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": ["Organization", "LocalBusiness"], "@id": "https://hongcheon-yeolmokeo.vercel.app/#organization", name: "홍천 열목어마을", url: "https://hongcheon-yeolmokeo.vercel.app", description: "홍천의 자연, 숙박, 치유농업 프로그램과 제철 밥상을 연결하는 산촌 마을", ...verifiedAddress },
+      { "@type": ["Organization", "LocalBusiness"], "@id": "https://hongcheon-yeolmokeo.vercel.app/#organization", name: "홍천 열목어마을", url: "https://hongcheon-yeolmokeo.vercel.app", description: "홍천의 자연, 숙박, 치유농업 프로그램과 제철 밥상을 연결하는 산촌 마을", sameAs: siteConfig.socials.map((social) => social.href), ...verifiedAddress },
       { "@type": "LodgingBusiness", "@id": "https://hongcheon-yeolmokeo.vercel.app/#lodging", name: "홍천 열목어마을 숙소", parentOrganization: { "@id": "https://hongcheon-yeolmokeo.vercel.app/#organization" }, ...verifiedAddress },
       { "@type": "TouristAttraction", "@id": "https://hongcheon-yeolmokeo.vercel.app/#attraction", name: "홍천 열목어마을", description: "열목어 서식지와 백두대간 숲을 품은 농촌 치유여행지", ...verifiedAddress }
     ]

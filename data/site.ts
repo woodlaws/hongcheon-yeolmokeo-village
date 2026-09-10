@@ -75,7 +75,8 @@ export const faqs = [
 ] as const;
 
 export const imageSources = [
-  { file: "forest-1.jpg", use: "히어로·최종 CTA", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
+  { file: "village-main-hero.jpg", use: "메인 히어로·마을 전경", source: "운영자 제공 — 열목어마을전경3.jpg" },
+  { file: "forest-1.jpg", use: "주변 여행지 · 삼봉자연휴양림", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
   { file: "forest-2.jpg", use: "마을·계곡 풍경", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
   { file: "forest-3.jpg", use: "여행 안내 숲길", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
   { file: "quiet-time-1.png", use: "계곡 쉼", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },

@@ -17,14 +17,19 @@ export default function Home() {
     <SiteHeader />
     <main>
       <section className="hero" aria-labelledby="hero-title">
-        <Image src="/images/forest-1.jpg" alt="열목어마을의 숲과 계곡 옆 산촌 숙소" fill priority className="hero-image" sizes="100vw" />
-        <div className="hero-shade" />
+        <div className="hero-media">
+          <Image src="/images/village-main-hero.jpg" alt="홍천 열목어마을 건물과 잔디마당 전경" fill priority loading="eager" fetchPriority="high" className="hero-image" sizes="100vw" />
+          <div className="hero-shade" />
+        </div>
         <div className="container hero-content">
-          <p className="hero-eyebrow">도시에서 잠시 멀어져, 나에게 가까워지는 곳</p>
-          <h1 id="hero-title">잘 쉬고, 잘 먹고,<br />다시 살아갈 힘을 얻는 마을</h1>
-          <p className="hero-copy">홍천의 맑은 계곡과 숲, 정성스러운 치유 밥상과 편안한 숙박이 기다립니다.</p>
-          <div className="hero-actions"><NaverBookingLink className="button button-primary" position="home-hero">네이버에서 예약하기</NaverBookingLink><Link href="/programs" className="button button-ghost">치유 프로그램 보기 <ArrowRight size={18}/></Link><Link href="/group" className="button button-ghost">단체 방문 문의</Link></div>
-          <div className="hero-facts"><span><Mountain size={17}/>해발 700m 백두대간</span><span><Utensils size={17}/>숙박·식사 가능</span><span><Users size={17}/>개인·단체 맞춤 상담</span></div>
+          <div className="hero-copy-panel">
+            <p className="hero-eyebrow">도시에서 잠시 멀어져, 나에게 가까워지는 곳</p>
+            <h1 id="hero-title" className="hero-title-desktop">잘 쉬고, 잘 먹고,<br />다시 살아갈 힘을 얻는 마을</h1>
+            <h1 className="hero-title-mobile" aria-hidden="true">잘 쉬고, 잘 먹고,<br />다시 살아갈 힘을<br />얻는 마을</h1>
+            <p className="hero-copy">홍천의 맑은 계곡과 숲, 정성스러운 치유 밥상과 편안한 숙박이 기다립니다.</p>
+            <div className="hero-actions"><NaverBookingLink className="button button-primary" position="home-hero">네이버에서 예약하기</NaverBookingLink><Link href="/programs" className="button button-ghost">치유 프로그램 보기 <ArrowRight size={18}/></Link><Link href="/group" className="button button-ghost">단체 방문 문의</Link></div>
+            <div className="hero-facts"><span><Mountain size={17}/>해발 700m 백두대간</span><span><Utensils size={17}/>숙박·식사 가능</span><span><Users size={17}/>개인·단체 맞춤 상담</span></div>
+          </div>
         </div>
       </section>
       <VisitPlanner />
@@ -51,7 +56,7 @@ export default function Home() {
 
       <section className="home-section container"><header className="section-heading"><p className="section-kicker">VOICES</p><h2>쉬고 간 사람들의 이야기</h2><p>실제 후기 수집 전 레이아웃 확인을 위한 샘플 후기입니다.</p></header><div className="testimonial-grid">{testimonials.map(item=><blockquote key={item.quote}><span>샘플 후기</span><p>“{item.quote}”</p><cite>{item.author}</cite></blockquote>)}</div></section>
 
-      <section className="final-cta"><Image src="/images/forest-1.jpg" alt="숲과 계곡을 품은 홍천 산촌 전경" fill sizes="100vw"/><div/><div className="container"><p>좋은 쉼이, 다시 좋은 나를 만듭니다.</p><h2>이번 주말, 홍천에서 제대로 쉬어보세요</h2><span>지금, 나를 위한 쉼을 계획할 시간입니다.</span><div><Link href="/contact" className="button button-light">방문 상담하기</Link><Link href="/contact?type=group" className="button button-ghost">단체 견적 문의</Link></div></div></section>
+      <section className="final-cta"><Image src="/images/village-main-hero.jpg" alt="홍천 열목어마을 건물과 잔디마당 전경" fill sizes="100vw"/><div/><div className="container"><p>좋은 쉼이, 다시 좋은 나를 만듭니다.</p><h2>이번 주말, 홍천에서 제대로 쉬어보세요</h2><span>지금, 나를 위한 쉼을 계획할 시간입니다.</span><div><Link href="/contact" className="button button-light">방문 상담하기</Link><Link href="/contact?type=group" className="button button-ghost">단체 견적 문의</Link></div></div></section>
     </main>
     <SiteFooter/><MobileCta/>
   </>;

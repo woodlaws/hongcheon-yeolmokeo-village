@@ -181,7 +181,7 @@ export const stories: Story[] = [
     excerpt: "열목어가 살아가는 청정한 자연을 존중하며 방문객과 함께 지켜야 할 여행 예절을 안내합니다.",
     lead: "아름다운 풍경을 만나는 일은 그 풍경에 흔적을 덜 남기는 태도와 함께합니다.",
     category: "마을 소식", publishedAt: "2026-09-10", readingMinutes: 3,
-    coverImage: "/images/forest-1.jpg", coverAlt: "바위와 나무가 어우러진 열목어마을의 청정한 숲",
+    coverImage: "/images/forest-2.jpg", coverAlt: "바위와 나무가 어우러진 홍천 내면의 청정한 숲",
     tags: ["열목어", "생태", "여행 예절"], factStatus: "editorial",
     pullQuote: "보호종과 서식지를 대하는 가장 좋은 관찰은 거리를 지키는 일입니다.",
     sections: [

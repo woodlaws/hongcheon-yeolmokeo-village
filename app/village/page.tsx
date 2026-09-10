@@ -97,7 +97,7 @@ export default function VillagePage() {
       <SiteHeader />
       <main className="village-page">
         <section className="village-hero">
-          <Image src="/images/forest-1.jpg" fill priority sizes="100vw" alt="푸른 산과 숲, 계곡이 이어지는 홍천 열목어마을 전경" />
+          <Image src="/images/village-main-hero.jpg" fill priority sizes="100vw" alt="홍천 열목어마을 건물과 잔디마당 전경" />
           <div className="village-hero-shade" />
           <div className="container village-hero-content">
             <p className="village-eyebrow">홍천의 깊은 숲과 맑은 물이 품은 치유마을</p>

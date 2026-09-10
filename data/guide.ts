@@ -1,3 +1,5 @@
+import { siteConfig } from "@/data/site";
+
 export const guideSources = {
   village: "https://www.hongcheon.go.kr/tour/selectTourCntntsWebView.do?ctgry=7&key=2036&pageIndex=1&pageUnit=1000&searchCnd=all&searchShowAt=Y&tourNo=1991",
   visitKorea: "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=58201d34-1a4b-4582-b2dc-100419afaee2",
@@ -28,7 +30,7 @@ export const guideItineraries = [
       { title: "1일차", steps: ["오전 출발", "열목어마을 도착", "치유밥상", "숲길 또는 계곡 체험", "몸살림·싱잉볼·족욕 등 선택 프로그램", "저녁 식사", "불멍·별빛·자유 휴식", "숙박"] },
       { title: "2일차", steps: ["산촌 아침 산책", "아침 식사", "아로마 티 블렌딩 또는 농촌체험", "점심 식사", "국립삼봉자연휴양림 또는 삼봉약수 연계", "귀가"] },
     ],
-    notice: "불멍과 별빛 명상은 과거 패키지 소개 이력이 있으나 현재 제공 여부는 운영자 확인이 필요합니다.", primary: "/contact?type=trip&duration=overnight", primaryLabel: "1박 2일 상담", secondary: "/stay", secondaryLabel: "숙소 보기",
+    notice: "희망 일정과 인원을 상담 페이지에 남겨주시면 가능한 숙박·프로그램 구성을 안내합니다.", primary: "/contact?type=trip&duration=overnight", primaryLabel: "1박 2일 상담", secondary: "/stay", secondaryLabel: "숙소 보기",
   },
   {
     id: "workation", label: "2박 3일", title: "서두르지 않고 온전히 회복하는 2박 3일", audience: "번아웃 직장인·자영업자·프리랜서·워케이션 참가자·소규모 기업팀",
@@ -42,12 +44,11 @@ export const guideItineraries = [
 ] as const;
 
 export const attractions = [
-  { id: "sambong-forest", name: "국립삼봉자연휴양림", category: "숲·휴양림", summary: "울창한 숲과 계곡, 삼봉약수를 함께 만날 수 있는 자연휴양림입니다.", address: "강원특별자치도 홍천군 내면 삼봉휴양길 276", seasons: ["봄", "여름", "가을"], experience: "숲길·계곡·삼봉약수", duration: "운영시간 확인 후 계획", distance: "지도 확인 필요", reservation: "시설 이용·예약 여부 확인", officialUrl: guideSources.sambong, mapUrl: "https://map.naver.com/p/search/국립삼봉자연휴양림", verified: true },
-  { id: "sambong-spring", name: "삼봉약수", category: "약수·숲길", summary: "국립삼봉자연휴양림 안에서 숲길을 걸으며 만날 수 있는 홍천의 대표 약수입니다.", address: "국립삼봉자연휴양림 내", seasons: ["봄", "여름", "가을"], experience: "숲길과 약수", duration: "출발 전 확인", distance: "지도 확인 필요", reservation: "휴양림 운영정보 확인", officialUrl: guideSources.sambong, mapUrl: "https://map.naver.com/p/search/홍천%20삼봉약수", verified: true },
-  { id: "ginkgo-forest", name: "홍천 은행나무숲", category: "가을 명소", summary: "가을이면 약 2,000그루의 은행나무가 장관을 이루는 홍천의 대표적인 계절 명소입니다.", address: "정확한 진입 위치 출발 전 확인", seasons: ["가을"], experience: "은행나무 단풍", duration: "개방 일정 확인 후 계획", distance: "지도 확인 필요", reservation: "사유지·계절 개방 여부 확인", officialUrl: guideSources.ginkgo, mapUrl: "https://map.naver.com/p/search/홍천%20은행나무숲", verified: true },
-  { id: "guryong-old-road", name: "구룡령 옛길", category: "백두대간·명승", summary: "홍천과 양양을 잇던 백두대간의 옛길에서 깊은 산의 풍경과 역사를 만날 수 있습니다.", address: "국가유산포털 소재지: 강원 양양군 서면 갈천리 산1-1", seasons: ["봄", "가을"], experience: "역사길·산행", duration: "코스·체력에 따라 확인", distance: "지도 확인 필요", reservation: "날씨·통제 여부 확인", officialUrl: guideSources.guryong, mapUrl: "https://map.naver.com/p/search/구룡령%20옛길", verified: true },
-  { id: "odaesan", name: "오대산국립공원", category: "국립공원", summary: "열목어마을 여행과 함께 강원도의 깊은 숲과 백두대간의 생태를 경험할 수 있는 국립공원입니다.", address: "방문할 탐방코스별 출발지 확인", seasons: ["사계절"], experience: "숲길·탐방", duration: "선택 코스별 확인", distance: "지도 확인 필요", reservation: "탐방로 통제·입산시간 확인", officialUrl: guideSources.odaesan, mapUrl: "https://map.naver.com/p/search/오대산국립공원", verified: true },
-  { id: "tongmaram", name: "통마람계곡·약수", category: "계곡·자연", summary: "열목어마을의 청정 자연과 연결되는 계곡 여행지로 소개됩니다.", address: "정확한 진입 위치 운영자 확인 필요", seasons: ["봄", "여름", "가을"], experience: "계곡과 자연", duration: "확인 필요", distance: "확인 필요", reservation: "명칭·개방·안전정보 확인", officialUrl: guideSources.village, mapUrl: "https://map.naver.com/p/search/홍천%20통마람계곡", verified: false },
+  { id: "sambong-forest", name: "국립삼봉자연휴양림", category: "숲·휴양림", summary: "울창한 숲과 계곡, 삼봉약수를 함께 만날 수 있는 자연휴양림입니다.", address: "강원특별자치도 홍천군 내면 삼봉휴양길 276", seasons: ["봄", "여름", "가을"], experience: "숲길·계곡·삼봉약수", duration: "공식 운영시간에 맞춰 계획", distance: "지도에서 경로 보기", reservation: "숲나들e에서 운영·예약 조회", officialUrl: guideSources.sambong, mapUrl: "https://map.naver.com/p/search/국립삼봉자연휴양림", verified: true },
+  { id: "sambong-spring", name: "삼봉약수", category: "약수·숲길", summary: "국립삼봉자연휴양림 안에서 숲길을 걸으며 만날 수 있는 홍천의 대표 약수입니다.", address: "국립삼봉자연휴양림 내", seasons: ["봄", "여름", "가을"], experience: "숲길과 약수", duration: "휴양림 운영시간에 맞춰 계획", distance: "지도에서 경로 보기", reservation: "숲나들e에서 운영정보 조회", officialUrl: guideSources.sambong, mapUrl: "https://map.naver.com/p/search/홍천%20삼봉약수", verified: true },
+  { id: "ginkgo-forest", name: "홍천 은행나무숲", category: "가을 명소", summary: "가을이면 약 2,000그루의 은행나무가 장관을 이루는 홍천의 대표적인 계절 명소입니다.", address: "네이버 지도에서 방문 진입점 조회", seasons: ["가을"], experience: "은행나무 단풍", duration: "공식 개방일에 맞춰 계획", distance: "지도에서 경로 보기", reservation: "홍천군 관광정보에서 계절 개방 조회", officialUrl: guideSources.ginkgo, mapUrl: "https://map.naver.com/p/search/홍천%20은행나무숲", verified: true },
+  { id: "guryong-old-road", name: "구룡령 옛길", category: "백두대간·명승", summary: "홍천과 양양을 잇던 백두대간의 옛길에서 깊은 산의 풍경과 역사를 만날 수 있습니다.", address: "국가유산포털 소재지: 강원 양양군 서면 갈천리 산1-1", seasons: ["봄", "가을"], experience: "역사길·산행", duration: "코스와 체력에 맞춰 계획", distance: "지도에서 경로 보기", reservation: "출발 전 날씨·통제 정보 조회", officialUrl: guideSources.guryong, mapUrl: "https://map.naver.com/p/search/구룡령%20옛길", verified: true },
+  { id: "odaesan", name: "오대산국립공원", category: "국립공원", summary: "열목어마을 여행과 함께 강원도의 깊은 숲과 백두대간의 생태를 경험할 수 있는 국립공원입니다.", address: "선택한 탐방코스의 공식 출발지 이용", seasons: ["사계절"], experience: "숲길·탐방", duration: "선택 코스별 계획", distance: "지도에서 경로 보기", reservation: "국립공원공단에서 통제·입산시간 조회", officialUrl: guideSources.odaesan, mapUrl: "https://map.naver.com/p/search/오대산국립공원", verified: true },
 ] as const;
 
 export const themeRoutes = [
@@ -66,7 +67,7 @@ export const seasons = [
 
 export const transportGuides = [
   { id: "car", title: "자가용", status: "출발 전 목적지 재확인", steps: ["수도권 또는 출발지", "홍천군 내면 진입", "산간도로 주행", "운영자가 안내한 최종 집결지"], checks: ["야간 운전 주의", "겨울철 결빙과 월동장비", "주유소·전기차 충전 계획", "예상 시간은 출발 직전 지도에서 확인"] },
-  { id: "transit", title: "대중교통", status: "최신 노선·시간표 확인", steps: ["서울 또는 출발지", "홍천터미널 또는 지역 거점", "내면 방면 이동", "택시·지역교통 또는 픽업 여부 문의", "최종 이동 방법 확인"] , checks: ["직접 연결 노선 확인 필요", "마을 픽업 제공 여부 미확인", "막차와 귀가편 사전 확인"] },
+  { id: "transit", title: "대중교통", status: "출발일 기준 노선 조회", steps: ["서울 또는 출발지", "홍천터미널 또는 지역 거점", "내면 방면 이동", "택시·지역교통 또는 픽업 여부 문의", "최종 이동 방법 확인"] , checks: ["지도 앱에서 당일 연결 노선 조회", "마을 픽업은 예약 전 전화 문의", "막차와 귀가편 사전 조회"] },
   { id: "bus", title: "단체버스", status: "사전 상담 필수", steps: ["차량 종류와 인원 전달", "진입·회차 가능 여부 확인", "승하차·주차 위치 확정", "겨울철 도로 상태 재확인"], checks: ["대형버스 진입", "회차 공간", "주차 가능 대수", "기사 숙박·식사"] },
 ] as const;
 
@@ -89,16 +90,16 @@ export const officialLinks = [
 export const guideFaqs = [
   ["서울에서 자동차로 얼마나 걸리나요?", "교통 상황과 최종 목적지에 따라 달라집니다. 정확한 시간을 고정해 안내하지 않으며 출발 직전 지도에서 실시간 경로를 확인해 주세요."],
   ["대중교통으로 갈 수 있나요?", "홍천터미널 또는 지역 거점에서 내면 방면 이동편을 확인해야 합니다. 최신 노선과 시간표를 확인한 뒤 최종 이동 방법을 운영자에게 문의해 주세요."],
-  ["마을 픽업이 가능한가요?", "픽업 서비스 제공 여부는 확인되지 않았습니다. 예약 전 운영자에게 가능 여부와 비용을 문의해 주세요."],
-  ["주차할 수 있나요?", "차종별 주차 가능 대수와 위치가 확정 공개되지 않았습니다. 차량 종류와 대수를 미리 알려주세요."],
+  ["마을 픽업이 가능한가요?", "픽업이 필요하면 예약 전에 운영자에게 가능 여부와 비용을 문의해 주세요."],
+  ["주차할 수 있나요?", "차량 종류와 대수를 문의 페이지에 남겨주시면 방문 동선과 함께 안내합니다."],
   ["대형버스가 들어갈 수 있나요?", "진입로, 회차 공간과 승하차 위치 확인이 필요하므로 단체버스는 반드시 사전 상담해 주세요."],
   ["아이와 계곡에 들어갈 수 있나요?", "날씨와 수위를 먼저 확인하고 보호자와 지정된 동선을 이용해야 합니다. 기상특보나 집중호우 때는 접근하지 마세요."],
   ["비가 오면 프로그램은 어떻게 되나요?", "실내 대체 프로그램과 일정 변경 가능 여부를 방문 전 확인해 주세요. 계곡 활동은 현장 기상과 수위에 따라 제한될 수 있습니다."],
   ["겨울에도 방문할 수 있나요?", "겨울 여행은 가능 여부를 먼저 상담하고 도로 결빙, 월동장비와 기상특보를 확인해야 합니다."],
   ["숙소와 프로그램은 따로 예약해야 하나요?", "일반 객실은 네이버 예약을 이용하고, 숙박·식사·프로그램 결합 일정은 맞춤 상담을 이용해 주세요."],
-  ["식사를 신청할 수 있나요?", "치유밥상 관련 운영 이력은 있으나 날짜와 인원별 가능 여부는 확인이 필요합니다. 알레르기와 식이 제한을 미리 알려주세요."],
+  ["식사를 신청할 수 있나요?", "희망 날짜와 인원, 알레르기와 식이 제한을 문의 페이지에 남겨주시면 가능한 식사 구성을 안내합니다."],
   ["주변 관광지는 예약이 필요한가요?", "시설과 계절에 따라 다릅니다. 숲나들e, 국립공원공단과 각 공식 관광정보에서 운영·예약 여부를 확인해 주세요."],
   ["반려동물을 동반할 수 있나요?", "현재 동반 가능 여부가 확정되지 않았습니다. 숙소·프로그램·주변 시설별 기준을 방문 전에 확인해 주세요."],
   ["고령자나 보행이 불편한 사람도 방문할 수 있나요?", "대한민국 구석구석에는 열목어마을의 무장애 편의시설이 제한적으로 안내됩니다. 이동 동선과 시설 이용 가능 여부를 사전에 상담해 주세요."],
-  ["어떤 주소를 내비게이션에 입력해야 하나요?", "마을·사업자·숙소 주소로 보이는 자료가 서로 달라 현재 확정 주소를 표시하지 않습니다. 예약 확정 시 운영자가 안내한 집결지를 입력해 주세요."],
+  ["어떤 주소를 내비게이션에 입력해야 하나요?", `마을 대표 주소는 ${siteConfig.address}입니다. 시설별 별도 집결지가 안내된 경우에는 예약 안내를 따라주세요.`],
 ] as const;

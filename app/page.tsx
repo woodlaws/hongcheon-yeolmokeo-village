@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { VisitPlanner } from "@/components/visit-planner";
 import { NaverBookingLink } from "@/components/booking-links";
-import { itineraries, press, programs, testimonials } from "@/data/site";
+import { itineraries, press, programs } from "@/data/site";
 import { stayRooms } from "@/data/stay";
 import { travelAttractions } from "@/data/travel";
 
@@ -50,11 +50,9 @@ export default function Home() {
 
       <section className="home-section container"><div className="feature-split"><Image src="/images/stay-room.png" alt="열목어마을의 정갈한 객실" width={900} height={680}/><div><p className="section-kicker">STAY</p><h2>숲과 계곡 가까이에서 보내는 편안한 밤</h2><p>보금자리, 비움센터, 한옥숙소로 안내되는 산촌의 잠자리. 실시간 예약 가능 일정과 이용금액은 네이버 예약에서 확인해 주세요.</p><ul>{stayRooms.slice(0,3).map(stay=><li key={stay.name}><b>{stay.name}</b><span>{stay.roomConfigurations.join(" · ")}</span></li>)}</ul><div className="inline-actions"><Link href="/stay" className="button button-primary">숙소 자세히 보기</Link><NaverBookingLink className="button button-outline" position="home-stay">네이버에서 예약하기</NaverBookingLink></div></div></div></section>
 
-      <section className="food-section"><div className="container feature-split reverse"><Image src="/images/healing-table.jpg" alt="지역 제철 식재료로 만든 한식 치유밥상" width={900} height={680}/><div><p className="section-kicker">HEALING TABLE</p><h2>지역의 제철 재료로 차리는 건강한 한 끼</h2><p>홍천 내면의 농산물과 산나물, 계절에 따라 달라지는 식재료를 정성스러운 한식으로 만납니다.</p><div className="pill-list"><span>지역 농산물</span><span>정성스러운 한식</span><span>계절별 밥상</span><span>단체 식사 가능 여부 확인 필요</span></div><Link href="/programs/healing-food" className="text-link">치유밥상 알아보기 <ArrowRight size={17}/></Link></div></div></section>
+      <section className="food-section"><div className="container feature-split reverse"><Image src="/images/healing-table.jpg" alt="지역 제철 식재료로 만든 한식 치유밥상" width={900} height={680}/><div><p className="section-kicker">HEALING TABLE</p><h2>지역의 제철 재료로 차리는 건강한 한 끼</h2><p>홍천 내면의 농산물과 산나물, 계절에 따라 달라지는 식재료를 정성스러운 한식으로 만납니다.</p><div className="pill-list"><span>지역 농산물</span><span>정성스러운 한식</span><span>계절별 밥상</span><span>단체 식사는 희망 날짜·인원 상담</span></div><Link href="/programs/healing-food" className="text-link">치유밥상 알아보기 <ArrowRight size={17}/></Link></div></div></section>
 
       <section className="trust-section"><div className="container"><header className="section-heading left"><p className="section-kicker">TRUST & RECORDS</p><h2>마을이 쌓아 온 치유의 기록</h2><p>확인된 공공기관 자료와 언론 보도를 바탕으로 소개합니다.</p></header><div className="trust-grid">{press.map((item,index)=><a href={item.href} target="_blank" rel="noreferrer" key={item.href}><span>0{index+1}</span><p>{item.label}</p><h3>{item.title}</h3><small>{item.source}</small></a>)}</div></div></section>
-
-      <section className="home-section container"><header className="section-heading"><p className="section-kicker">VOICES</p><h2>쉬고 간 사람들의 이야기</h2><p>실제 후기 수집 전 레이아웃 확인을 위한 샘플 후기입니다.</p></header><div className="testimonial-grid">{testimonials.map(item=><blockquote key={item.quote}><span>샘플 후기</span><p>“{item.quote}”</p><cite>{item.author}</cite></blockquote>)}</div></section>
 
       <section className="final-cta"><Image src="/images/village-main-hero.jpg" alt="홍천 열목어마을 건물과 잔디마당 전경" fill sizes="100vw"/><div/><div className="container"><p>좋은 쉼이, 다시 좋은 나를 만듭니다.</p><h2>이번 주말, 홍천에서 제대로 쉬어보세요</h2><span>지금, 나를 위한 쉼을 계획할 시간입니다.</span><div><Link href="/contact" className="button button-light">방문 상담하기</Link><Link href="/contact?type=group" className="button button-ghost">단체 견적 문의</Link></div></div></section>
     </main>

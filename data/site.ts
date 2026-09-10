@@ -1,24 +1,25 @@
 const defaultNaverBookingUrl = "https://m.booking.naver.com/booking/3/bizes/853337/items/7925129?area=plt&lang=ko&tab=book&theme=place";
+const officialAddress = "강원특별자치도 홍천군 내면 명개로 98";
 
 export const siteConfig = {
   name: "홍천 열목어마을",
   tagline: "자연이 주는 쉼, 다시 살아가는 힘",
-  address: "강원특별자치도 홍천군 내면 명개로 98",
-  addressCandidates: ["강원특별자치도 홍천군 내면 명개로 98", "강원특별자치도 홍천군 내면 열목어길 86", "강원특별자치도 홍천군 서석면 마리소리길 57"],
+  address: officialAddress,
   contact: {
     email: "mgrbest98@naver.com",
     emailHref: "mailto:mgrbest98@naver.com",
     phoneDisplay: "010-7431-9600",
     phoneHref: "tel:01074319600",
   },
-  hours: "운영시간 확인 필요",
+  hours: "방문 전 전화 문의",
   instagram: "",
   naverBookingUrl: process.env.NEXT_PUBLIC_NAVER_BOOKING_URL?.trim() || defaultNaverBookingUrl,
   addressVerified: true,
-  structuredAddress: "강원특별자치도 홍천군 내면 명개로 98",
+  structuredAddress: officialAddress,
   latitude: null,
   longitude: null,
   mapUrl: "https://map.naver.com/p/search/%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%ED%99%8D%EC%B2%9C%EA%B5%B0%20%EB%82%B4%EB%A9%B4%20%EB%AA%85%EA%B0%9C%EB%A1%9C%2098",
+  googleMapEmbedUrl: "https://maps.google.com/maps?q=%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%ED%99%8D%EC%B2%9C%EA%B5%B0%20%EB%82%B4%EB%A9%B4%20%EB%AA%85%EA%B0%9C%EB%A1%9C%2098&z=15&output=embed",
 } as const;
 
 export interface Program {
@@ -35,7 +36,7 @@ export interface Program {
 }
 
 export const programs: Program[] = [
-  { slug: "98-staywork", title: "98 스테이워크", category: "웰니스 워케이션", audience: "원격근무자·크리에이터·소규모 팀", season: "일정 확인 필요", duration: "2박 3일", image: "/images/programs/98-staywork-poster.png", summary: "숲에서 일하고 자연에서 쉬는 체류형 워케이션", highlights: ["공유 업무공간", "숙박과 지역 제철 식사", "세 가지 농촌 치유 프로그램", "다과 및 휴식 공간"], preparation: "예약 가능 일정과 가격 적용 기준, 객실 배정은 예약 전에 확인해 주세요." },
+  { slug: "98-staywork", title: "98 스테이워크", category: "웰니스 워케이션", audience: "원격근무자·크리에이터·소규모 팀", season: "사전 일정 상담", duration: "2박 3일", image: "/images/programs/98-staywork-poster.png", summary: "숲에서 일하고 자연에서 쉬는 체류형 워케이션", highlights: ["공유 업무공간", "숙박과 지역 제철 식사", "세 가지 농촌 치유 프로그램", "다과 및 휴식 공간"], preparation: "희망 날짜와 인원을 알려주시면 적용 가능한 일정과 객실을 안내해 드립니다." },
   { slug: "burnout-retreat", title: "직장인 번아웃 쉼", audience: "직장인·자영업자", season: "사계절", image: "/images/quiet-time-3.png", summary: "디지털 기기와 업무의 속도를 내려놓고 숲, 호흡, 소리 명상으로 나의 리듬을 되찾습니다.", highlights: ["디지털 디톡스", "싱잉볼 테라피", "약초 족욕", "별빛 명상"], preparation: "편한 복장, 개인 세면도구, 계곡 활동용 신발" },
   { slug: "family-experience", title: "가족 농촌 체험", audience: "아이 동반 가족", season: "봄·여름·가을", image: "/images/farm-experience.png", summary: "밭과 숲에서 함께 움직이고 제철 농산물을 만지며 가족의 새로운 추억을 만듭니다.", highlights: ["계절 농작물 체험", "자연 관찰", "간식 만들기", "숲밧줄놀이"], preparation: "흙이 묻어도 되는 옷, 모자, 운동화" },
   { slug: "forest-healing", title: "숲과 계곡 치유", audience: "개인·소그룹", season: "봄·여름·가을", image: "/images/quiet-time-1.png", summary: "1급수 계곡과 백두대간 숲길을 천천히 걸으며 오감을 깨우는 자연 회복 프로그램입니다.", highlights: ["계곡 트레킹", "걷기 명상", "풍욕과 계곡 쉼", "숲 해설"], preparation: "트레킹화, 물병, 계절별 방한·우천 용품" },
@@ -47,12 +48,6 @@ export const itineraries = [
   { title: "온전히 회복하는 2박 3일", duration: "2박 3일", items: ["첫날: 속도를 낮추는 디지털 쉼", "둘째 날: 숲·계곡·농촌 오감 체험", "셋째 날: 회복 루틴 정리와 귀가"], includes: "대상과 계절에 따라 맞춤 구성" },
 ] as const;
 
-export const testimonials = [
-  { quote: "휴대폰을 내려놓고 물소리를 듣는 시간이 얼마나 필요한지 알게 됐어요.", author: "직장인 프로그램 참여자", sample: true },
-  { quote: "아이와 흙을 만지고 함께 밥을 먹는 하루가 오래 기억에 남았습니다.", author: "가족 체험 참여자", sample: true },
-  { quote: "회의실을 벗어나 걸으니 팀의 대화가 한결 편안해졌습니다.", author: "단체 워크숍 참여자", sample: true },
-] as const;
-
 export const press = [
   { title: "홍천군 치유농업시설 현황 — 열목어마을", source: "홍천군농업기술센터", href: "https://www.hongcheon.go.kr/agri/contents.do?key=1062", label: "공공기관 자료" },
   { title: "전문가 된 주민들, 치유의 힘 알리다", source: "농촌여성신문", href: "https://www.rwn.co.kr/news/articleView.html?idxno=50272", label: "소방관 치유 사례" },
@@ -60,17 +55,10 @@ export const press = [
   { title: "열목어마을 여행지 정보", source: "웰촌", href: "https://www.welchon.com/web/lay1/program/S1T11C446/travelPlaceInfo/view.do?api_type=0&cont_seq=5732", label: "농촌여행 정보" },
 ] as const;
 
-export const products = [
-  { name: "홍천 내면 지역 농산물", note: "계절별 품목 확인 후 구매 문의", status: "상품 준비 중" },
-  { name: "선연재 식품", note: "구성과 가격은 운영자 확인 필요", status: "구매 문의" },
-  { name: "산촌 치유 선물세트", note: "지역 먹거리 중심의 구성 예정", status: "상품 준비 중" },
-  { name: "체험 연계 상품", note: "프로그램 참여 시 이용 가능 여부 확인", status: "구매 문의" },
-] as const;
-
 export const faqs = [
   { q: "숙박과 식사를 함께 이용할 수 있나요?", a: "공공기관 안내상 숙박과 식사가 가능한 시설입니다. 객실과 식사 가능 여부는 희망 날짜·인원에 따라 상담으로 확인해 주세요." },
   { q: "아이와 함께 참여할 수 있나요?", a: "가족 농촌체험과 자연 관찰 프로그램을 추천합니다. 연령별 난이도와 안전 준비는 신청 전 상담합니다." },
-  { q: "기업이나 학교 단체도 가능한가요?", a: "기업 워크숍, 공공기관 연수, 학교 농촌교육을 대상과 일정에 맞게 구성할 수 있습니다. 정확한 최대 인원은 운영자 확인이 필요합니다." },
+  { q: "기업이나 학교 단체도 가능한가요?", a: "기업 워크숍, 공공기관 연수, 학교 농촌교육을 대상과 일정에 맞게 구성할 수 있습니다. 방문 인원과 희망 날짜를 문의 페이지에 남겨주시면 가능한 구성을 안내해 드립니다." },
   { q: "예약 가능 여부는 바로 확인되나요?", a: "일반 객실의 실시간 예약 가능 일정, 이용금액과 결제는 네이버 예약에서 확인해 주세요. 단체와 프로그램 결합 일정은 별도 상담이 필요합니다." },
 ] as const;
 

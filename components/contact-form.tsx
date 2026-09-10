@@ -8,8 +8,22 @@ import { FormEvent, useMemo, useState } from "react";
 
 const typeMap: Record<string, string> = {
   trip: "여행 일정 상담", program: "프로그램 문의", workation: "워케이션 문의",
-  group: "단체 견적 문의", story: "방문 이야기 보내기",
+  group: "단체 견적 문의", story: "방문 이야기 보내기", market: "상품 구매 문의",
 };
+
+const fieldLabels: Record<string, string> = {
+  type: "문의 유형", name: "이름", phone: "연락처", email: "이메일",
+  date: "방문 희망일", guests: "방문 인원", program: "관심 프로그램", message: "문의 내용",
+};
+
+function openEmailComposer(event: FormEvent<HTMLFormElement>, subject: string) {
+  event.preventDefault();
+  const entries = Array.from(new FormData(event.currentTarget).entries())
+    .filter(([, value]) => typeof value === "string" && value.trim())
+    .map(([key, value]) => `${fieldLabels[key] ?? key}: ${String(value).trim()}`);
+  const separator = siteConfig.contact.emailHref.includes("?") ? "&" : "?";
+  window.location.href = `${siteConfig.contact.emailHref}${separator}subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(entries.join("\n"))}`;
+}
 const programMap: Record<string, string> = {
   "burnout-retreat": "직장인 번아웃 쉼", "family-experience": "가족 농촌 체험",
   "forest-healing": "숲과 계곡 치유", "healing-food": "제철 치유밥상",
@@ -36,8 +50,8 @@ function StayConsultationForm() {
   const params = useSearchParams();
   const [notice, setNotice] = useState("");
   function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setNotice(`온라인 상담 접수 채널을 준비하고 있습니다. ${siteConfig.contact.phoneDisplay} 또는 ${siteConfig.contact.email}로 문의해 주세요.`);
+    openEmailComposer(event, "[열목어마을] 숙박 맞춤 상담");
+    setNotice(`이메일 작성 화면을 열었습니다. 열리지 않으면 ${siteConfig.contact.email}로 보내거나 ${siteConfig.contact.phoneDisplay}로 전화해 주세요.`);
   }
   return <div className="stay-consultation">
     <header className="stay-consultation-intro"><p className="section-kicker">CUSTOM STAY</p><h2>필요한 일정을 함께 구성해 드립니다</h2><p>객실만 예약하실 경우 네이버 예약을 이용해 주세요. 숙박과 치유 프로그램, 식사, 단체 일정을 함께 구성하려면 상담 내용을 남겨주세요.</p><div>
@@ -53,7 +67,7 @@ function StayConsultationForm() {
       <label><span>방문 인원</span><input name="guests" type="number" inputMode="numeric" min="1" max="200" defaultValue={params.get("guests") ?? "2"} /></label>
       <label className="full"><span>상담 내용 *</span><textarea name="message" rows={6} required placeholder="숙박, 식사, 프로그램, 단체 일정 중 필요한 내용을 알려주세요." /></label>
       <label className="agree full"><input type="checkbox" required /><span>개인정보 수집·이용 안내를 확인했으며 상담을 위한 정보 제공에 동의합니다. *</span></label>
-      <div className="form-footer full"><button type="submit" className="button button-primary"><Send size={18} /> 상담 내용 확인</button><p>일반 객실 예약은 네이버 예약에서 바로 진행할 수 있습니다.</p></div>
+      <div className="form-footer full"><button type="submit" className="button button-primary"><Send size={18} /> 이메일로 상담 보내기</button><p>일반 객실 예약은 네이버 예약에서 바로 진행할 수 있습니다.</p></div>
       {notice && <div className="form-notice full" role="status"><AlertCircle /><p>{notice}</p></div>}
     </form></div>
   </div>;
@@ -64,8 +78,8 @@ function GeneralContactForm() {
   const initialType = useMemo(() => typeMap[params.get("type") ?? ""] ?? (params.get("program") ? "프로그램 문의" : "여행 일정 상담"), [params]);
   const [notice, setNotice] = useState("");
   function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setNotice(`온라인 문의 접수 채널을 준비하고 있습니다. ${siteConfig.contact.phoneDisplay} 또는 ${siteConfig.contact.email}로 문의해 주세요.`);
+    openEmailComposer(event, `[열목어마을] ${initialType}`);
+    setNotice(`이메일 작성 화면을 열었습니다. 열리지 않으면 ${siteConfig.contact.email}로 보내거나 ${siteConfig.contact.phoneDisplay}로 전화해 주세요.`);
   }
   return <div className="contact-layout"><ContactAside /><form className="contact-form" onSubmit={submit}>
     <label><span>문의 유형 *</span><select name="type" defaultValue={initialType} required><option>여행 일정 상담</option><option>프로그램 문의</option><option>워케이션 문의</option><option>단체 견적 문의</option><option>방문 이야기 보내기</option><option>상품 구매 문의</option><option>기타 문의</option></select></label>
@@ -73,6 +87,6 @@ function GeneralContactForm() {
     <label><span>방문 희망일</span><input name="date" type="date" defaultValue={params.get("date") ?? ""} /></label><label><span>방문 인원</span><input name="guests" type="number" inputMode="numeric" min="1" max="200" defaultValue={params.get("guests") ?? "2"} /></label>
     <label><span>관심 프로그램</span><select name="program" defaultValue={params.get("program") ?? ""}><option value="">아직 정하지 못했어요</option>{Object.entries(programMap).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
     <label className="full"><span>문의 내용 *</span><textarea name="message" rows={6} required placeholder="방문 목적과 필요한 프로그램을 알려주세요." /></label><label className="agree full"><input type="checkbox" required /><span>개인정보 수집·이용 안내를 확인했으며 상담을 위한 정보 제공에 동의합니다. *</span></label>
-    <div className="form-footer full"><button type="submit" className="button button-primary"><Send size={18} /> 문의 내용 확인</button><p>일반 객실 예약은 네이버 예약을 이용해 주세요.</p></div>{notice && <div className="form-notice full" role="status"><AlertCircle /><p>{notice}</p></div>}
+    <div className="form-footer full"><button type="submit" className="button button-primary"><Send size={18} /> 이메일로 문의 보내기</button><p>일반 객실 예약은 네이버 예약을 이용해 주세요.</p></div>{notice && <div className="form-notice full" role="status"><AlertCircle /><p>{notice}</p></div>}
   </form></div>;
 }

@@ -7,11 +7,11 @@ export const villageNavigation = [
 ] as const;
 
 export const villageOfficial = {
-  address: "강원특별자치도 홍천군 내면 명개로 98",
-  phoneDisplay: "010-7431-9600",
-  phoneHref: "tel:01074319600",
-  naverMap: "https://map.naver.com/p/search/%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%ED%99%8D%EC%B2%9C%EA%B5%B0%20%EB%82%B4%EB%A9%B4%20%EB%AA%85%EA%B0%9C%EB%A1%9C%2098",
-  googleEmbed: "https://maps.google.com/maps?q=%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%ED%99%8D%EC%B2%9C%EA%B5%B0%20%EB%82%B4%EB%A9%B4%20%EB%AA%85%EA%B0%9C%EB%A1%9C%2098&z=15&output=embed",
+  address: siteConfig.address,
+  phoneDisplay: siteConfig.contact.phoneDisplay,
+  phoneHref: siteConfig.contact.phoneHref,
+  naverMap: siteConfig.mapUrl,
+  googleEmbed: siteConfig.googleMapEmbedUrl,
 } as const;
 
 export const villageSources = {
@@ -22,3 +22,4 @@ export const villageSources = {
   nieProfile: "https://www.nie.re.kr/nie/bbs/BMSR00085/view.do?boardId=695966984&menuNo=200347",
   nibr: "https://www.nibr.go.kr/aiibook/access/ecatalogt.jsp?Dir=21&callmode=admin&catimage=&eclang=ko&start=104&um=s",
 } as const;
+import { siteConfig } from "@/data/site";

@@ -119,3 +119,10 @@ main:has(.contact-request-section) .page-hero{min-height:330px}.contact-request-
 @media(max-width:1000px){.footer-social{grid-column:2/-1}.footer-social-links{grid-template-columns:repeat(2,minmax(0,180px))}}
 @media(max-width:767px){.home-social-section{padding:76px 0}.home-social-grid{grid-template-columns:1fr}.home-social-card{min-height:0;padding:26px 22px}.footer-social{grid-column:1/-1}.footer-social-links{grid-template-columns:1fr 1fr}.footer-social-links a{justify-content:center}}
 @media(max-width:430px){.footer-social-links{grid-template-columns:1fr}}
+
+/* Village vision promise panorama */
+.village-promise>.container>.village-promise-photo{position:static;min-width:0;min-height:0}
+.village-promise-photo img{width:100%;height:auto;display:block;object-fit:contain}
+.village-promise h2{word-break:keep-all;overflow-wrap:normal}
+.village-promise h2 span{display:block;white-space:nowrap}
+@media(max-width:767px){.village-promise h2{font-size:clamp(28px,8.5vw,36px)}}

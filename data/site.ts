@@ -1,4 +1,5 @@
-const defaultNaverBookingUrl = "https://m.booking.naver.com/booking/3/bizes/853337/items/7925129?area=plt&lang=ko&tab=book&theme=place";
+const defaultNaverBookingUrl = "https://m.booking.naver.com/booking/3/bizes/853337";
+const defaultStayworkBookingUrl = "https://m.booking.naver.com/booking/3/bizes/853337/items/7925129?area=plt&lang=ko&tab=book&theme=place";
 const officialAddress = "강원특별자치도 홍천군 내면 명개로 98";
 
 export const siteConfig = {
@@ -17,6 +18,7 @@ export const siteConfig = {
     { id: "instagram", name: "인스타그램", href: "https://www.instagram.com/lenokvillage", title: "사진으로 만나는 열목어마을", description: "마을의 풍경과 일상을 사진으로 만나보세요.", buttonLabel: "인스타그램 방문하기" },
   ],
   naverBookingUrl: process.env.NEXT_PUBLIC_NAVER_BOOKING_URL?.trim() || defaultNaverBookingUrl,
+  stayworkBookingUrl: process.env.NEXT_PUBLIC_NAVER_STAYWORK_BOOKING_URL?.trim() || defaultStayworkBookingUrl,
   addressVerified: true,
   structuredAddress: officialAddress,
   latitude: null,
@@ -68,8 +70,8 @@ export const faqs = [
 export const imageSources = [
   { file: "village-main-hero.jpg", use: "메인 히어로·마을 전경", source: "운영자 제공 — 열목어마을전경3.jpg" },
   { file: "forest-1.jpg", use: "주변 여행지 · 삼봉자연휴양림", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
-  { file: "forest-2.jpg", use: "마을·계곡 풍경", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
-  { file: "forest-3.jpg", use: "여행 안내 숲길", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
+  { file: "forest-2.jpg", use: "주변 여행지 · 삼봉자연휴양림", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
+  { file: "forest-3.jpg", use: "주변 여행지의 숲 분위기 참고", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
   { file: "quiet-time-1.png", use: "계곡 쉼", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
   { file: "quiet-time-3.png", use: "숲속 해먹·번아웃 프로그램", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },
   { file: "village-arrival.png", use: "마을 시설", source: "홍천애홀릭 — 열목어마을에서 자발적인 산촌유배", url: "https://www.hcholic.com/219" },

@@ -4,7 +4,7 @@ import { CopyAddressButton } from "@/components/copy-address-button";
 import { VillagePageFrame } from "@/components/village-page-frame";
 import { villageOfficial, villageSources } from "@/data/village-pages";
 
-export const metadata: Metadata = { title: "찾아오시는 길｜홍천 열목어마을", description: "강원특별자치도 홍천군 내면 명개로 98, 홍천 열목어마을의 주소·지도·전화와 방문 전 교통 확인사항을 안내합니다.", alternates: { canonical: "/village/location" } };
+export const metadata: Metadata = { title: { absolute: "찾아오시는 길｜홍천 열목어마을" }, description: "강원특별자치도 홍천군 내면 명개로 98, 홍천 열목어마을의 주소·지도·전화와 방문 전 교통 확인사항을 안내합니다.", alternates: { canonical: "/village/location" } };
 export default function LocationPage() { return <VillagePageFrame eyebrow="LOCATION & VISIT" title="산길 끝에서 만나는 조용한 마을" description="정확한 목적지를 확인하고, 산간 지역의 날씨와 교통 여건을 살핀 뒤 여유 있게 출발해 주세요." image="/images/village-arrival.png" imageAlt="산과 나무에 둘러싸인 홍천 열목어마을 방문 시설">
   <section className="village-location"><div className="container">
     <div className="location-primary"><article><p className="section-kicker">OFFICIAL ADDRESS</p><h2>홍천 열목어마을</h2><address><MapPin aria-hidden="true" />{villageOfficial.address}</address><div className="village-inline-actions"><CopyAddressButton address={villageOfficial.address} /><a href={villageOfficial.naverMap} target="_blank" rel="noreferrer" className="button button-primary">네이버 지도 길찾기 <ExternalLink size={16} /></a></div><a className="location-phone" href={villageOfficial.phoneHref}><Phone aria-hidden="true" /><span><small>방문·운영 문의</small><b>{villageOfficial.phoneDisplay}</b></span></a><p className="location-source">주소와 전화는 홍천군 문화관광포털 및 2026년 홍천군 공식 안내를 기준으로 확인했습니다.</p></article><iframe src={villageOfficial.googleEmbed} title="홍천 열목어마을 위치 지도" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div>

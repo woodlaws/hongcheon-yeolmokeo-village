@@ -22,8 +22,10 @@ export function MobileCta() {
   }
 
   if (pathname.startsWith("/programs")) {
+    const slug = pathname.split("/")[2];
+    const consultationHref = slug ? `/contact?type=program&program=${encodeURIComponent(slug)}` : "/contact?type=program";
     return <div className="mobile-cta">
-      <ConsultationLink href="/contact?type=program" type="stay" position="mobile-programs" analyticsLabel="프로그램 상담"><MessageCircle size={18} /> 프로그램 상담</ConsultationLink>
+      <ConsultationLink href={consultationHref} type="program" position="mobile-programs" analyticsLabel="프로그램 상담"><MessageCircle size={18} /> 프로그램 상담</ConsultationLink>
       <NaverBookingLink position="mobile-programs" analyticsLabel="네이버 예약"><CalendarCheck size={18} /> 네이버 예약</NaverBookingLink>
     </div>;
   }

@@ -26,12 +26,12 @@ type LinkProps = {
   analyticsLabel?: string;
 };
 
-export function NaverBookingLink({ children, className, position, analyticsLabel }: LinkProps) {
+export function NaverBookingLink({ children, className, position, analyticsLabel, href }: LinkProps & { href?: string }) {
   const pathname = usePathname();
   const label = analyticsLabel ?? (typeof children === "string" ? children : "네이버 예약");
   return (
     <a
-      href={siteConfig.naverBookingUrl}
+      href={href ?? siteConfig.naverBookingUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={className}
@@ -57,14 +57,14 @@ export function PhoneReservationLink({ children, className, position, analyticsL
   );
 }
 
-export function ConsultationLink({ children, className, position, analyticsLabel, href, type }: LinkProps & { href: string; type: "stay" | "group" }) {
+export function ConsultationLink({ children, className, position, analyticsLabel, href, type }: LinkProps & { href: string; type: "stay" | "group" | "program" }) {
   const pathname = usePathname();
   const label = analyticsLabel ?? (typeof children === "string" ? children : "상담 신청");
   return (
     <a
       href={href}
       className={className}
-      onClick={() => track(type === "group" ? "group_consultation_click" : "stay_consultation_click", pathname, position, label)}
+      onClick={() => track(type === "group" ? "group_consultation_click" : type === "program" ? "program_consultation_click" : "stay_consultation_click", pathname, position, label)}
     >
       {children}
     </a>

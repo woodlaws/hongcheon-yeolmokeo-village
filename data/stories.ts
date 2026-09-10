@@ -78,7 +78,7 @@ export const stories: Story[] = [
   },
   {
     slug: "summer-valley-morning", title: "계곡물 소리가 가장 맑게 들리는 아침",
-    excerpt: "통마람계곡과 개방천의 맑은 물, 숲의 바람을 천천히 느끼며 걷는 열목어마을의 여름 아침입니다.",
+    excerpt: "통마람계곡과 계방천의 맑은 물, 숲의 바람을 천천히 느끼며 걷는 열목어마을의 여름 아침입니다.",
     lead: "해가 높아지기 전, 물소리를 따라 걷는 일만으로 마을의 여름을 충분히 만날 수 있습니다.",
     category: "계절 이야기", publishedAt: "2026-09-10", readingMinutes: 3,
     coverImage: "/images/valley-rest.png", coverAlt: "초록 숲 사이로 흐르는 홍천 열목어마을의 맑은 계곡",
@@ -167,7 +167,7 @@ export const stories: Story[] = [
     excerpt: "2020년 코로나19 대응 업무에 참여했던 119구급대원들이 열목어마을에서 심신 회복 프로그램에 참여한 기록입니다.",
     lead: "감염병 대응 현장을 지킨 구급대원에게 자연 속에서 호흡을 고르는 시간을 건넨 과거 운영 사례입니다.",
     category: "언론·기관", publishedAt: "2020-07-14", readingMinutes: 4,
-    coverImage: "/images/forest-2.jpg", coverAlt: "햇빛이 비치는 열목어마을의 울창한 숲길",
+    coverImage: "/images/village-main-hero.jpg", coverAlt: "홍천 열목어마을 건물과 잔디마당 전경",
     tags: ["119구급대원", "치유농업", "기관 프로그램"], factStatus: "verified",
     pullQuote: "과거의 운영 이력은 현재 일정을 약속하지 않지만, 마을이 어떤 쉼을 고민해 왔는지 보여줍니다.",
     sections: [
@@ -181,7 +181,7 @@ export const stories: Story[] = [
     excerpt: "열목어가 살아가는 청정한 자연을 존중하며 방문객과 함께 지켜야 할 여행 예절을 안내합니다.",
     lead: "아름다운 풍경을 만나는 일은 그 풍경에 흔적을 덜 남기는 태도와 함께합니다.",
     category: "마을 소식", publishedAt: "2026-09-10", readingMinutes: 3,
-    coverImage: "/images/forest-2.jpg", coverAlt: "바위와 나무가 어우러진 홍천 내면의 청정한 숲",
+    coverImage: "/images/yeolmokeo-village-panorama-02.jpg", coverAlt: "산과 하천을 따라 집과 밭이 자리한 열목어마을 전경",
     tags: ["열목어", "생태", "여행 예절"], factStatus: "editorial",
     pullQuote: "보호종과 서식지를 대하는 가장 좋은 관찰은 거리를 지키는 일입니다.",
     sections: [

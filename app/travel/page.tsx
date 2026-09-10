@@ -11,10 +11,10 @@ import { TravelExplorer } from "./travel-explorer";
 import styles from "./page.module.css";
 
 const pageUrl = "https://hongcheon-yeolmokeo.vercel.app/travel";
-const description = "홍천 열목어마을과 함께 둘러보기 좋은 통마름계곡, 삼봉자연휴양림, 삼봉약수, 은행나무숲, 계방산, 오대산 여행코스를 확인해 보세요.";
+const description = "홍천 열목어마을과 함께 둘러보기 좋은 통마람계곡, 삼봉자연휴양림, 삼봉약수, 은행나무숲, 계방산, 오대산 여행코스를 확인해 보세요.";
 
 export const metadata: Metadata = {
-  title: "홍천 열목어마을 주변 관광지 | 삼봉자연휴양림·은행나무숲·오대산 여행",
+  title: { absolute: "홍천 열목어마을 주변 관광지｜삼봉자연휴양림·은행나무숲·오대산 여행" },
   description,
   alternates: { canonical: "/travel" },
   openGraph: { title: "홍천 열목어마을 주변 관광지 | 삼봉자연휴양림·은행나무숲·오대산 여행", description, url: pageUrl, type: "website", locale: "ko_KR", siteName: "홍천 열목어마을" },

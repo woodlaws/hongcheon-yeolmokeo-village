@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen, HandHeart, Leaf, Wind } from "lucide-react";
 import Link from "@/components/static-link";
 import { VillagePageFrame } from "@/components/village-page-frame";
 
-export const metadata: Metadata = { title: "마을 비전｜홍천 열목어마을", description: "자연 보전, 일상의 휴식, 생태교육, 주민과의 상생을 지향하는 홍천 열목어마을의 가치와 방문 약속을 소개합니다.", alternates: { canonical: "/village/vision" } };
+export const metadata: Metadata = { title: { absolute: "마을 비전｜홍천 열목어마을" }, description: "자연 보전, 일상의 휴식, 생태교육, 주민과의 상생을 지향하는 홍천 열목어마을의 가치와 방문 약속을 소개합니다.", alternates: { canonical: "/village/vision" } };
 const values = [
   { icon: Leaf, number: "01", title: "자연 보전", text: "물과 숲, 그 안에서 살아가는 생명이 어우러지는 환경을 소중히 여깁니다. 방문과 체험이 자연을 소모하는 일이 아니라 오래 지키는 태도로 이어지도록 안내합니다." },
   { icon: Wind, number: "02", title: "일상의 휴식", text: "방문객이 정해진 성과를 내기보다 자연 속에서 자신의 속도를 되찾도록 돕습니다. 머무는 시간의 양보다 몸과 마음이 편안해지는 경험을 중요하게 생각합니다." },

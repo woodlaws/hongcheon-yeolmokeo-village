@@ -26,7 +26,7 @@ export default function Home() {
           <div className="hero-copy-panel">
             <p className="hero-eyebrow">도시에서 잠시 멀어져, 나에게 가까워지는 곳</p>
             <h1 id="hero-title" className="hero-title-desktop">잘 쉬고, 잘 먹고,<br />다시 살아갈 힘을 얻는 마을</h1>
-            <h1 className="hero-title-mobile" aria-hidden="true">잘 쉬고, 잘 먹고,<br />다시 살아갈 힘을<br />얻는 마을</h1>
+            <span className="hero-title-mobile" aria-hidden="true">잘 쉬고, 잘 먹고,<br />다시 살아갈 힘을<br />얻는 마을</span>
             <p className="hero-copy">홍천의 맑은 계곡과 숲, 정성스러운 치유 밥상과 편안한 숙박이 기다립니다.</p>
             <div className="hero-actions"><NaverBookingLink className="button button-primary" position="home-hero">네이버에서 예약하기</NaverBookingLink><Link href="/programs" className="button button-ghost">치유 프로그램 보기 <ArrowRight size={18}/></Link><Link href="/group" className="button button-ghost">단체 방문 문의</Link></div>
             <div className="hero-facts"><span><Mountain size={17}/>해발 700m 백두대간</span><span><Utensils size={17}/>숙박·식사 가능</span><span><Users size={17}/>개인·단체 맞춤 상담</span></div>

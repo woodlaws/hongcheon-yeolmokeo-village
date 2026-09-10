@@ -25,6 +25,7 @@ function openEmailComposer(event: FormEvent<HTMLFormElement>, subject: string) {
   window.location.href = `${siteConfig.contact.emailHref}${separator}subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(entries.join("\n"))}`;
 }
 const programMap: Record<string, string> = {
+  "98-staywork": "98 스테이워크",
   "burnout-retreat": "직장인 번아웃 쉼", "family-experience": "가족 농촌 체험",
   "forest-healing": "숲과 계곡 치유", "healing-food": "제철 치유밥상",
   "corporate-refresh": "기업 리프레시 워크숍", "public-training": "공공기관 연수",
@@ -49,6 +50,7 @@ function ContactAside() {
 function StayConsultationForm() {
   const params = useSearchParams();
   const [notice, setNotice] = useState("");
+  const today = new Date().toLocaleDateString("en-CA");
   function submit(event: FormEvent<HTMLFormElement>) {
     openEmailComposer(event, "[열목어마을] 숙박 맞춤 상담");
     setNotice(`이메일 작성 화면을 열었습니다. 열리지 않으면 ${siteConfig.contact.email}로 보내거나 ${siteConfig.contact.phoneDisplay}로 전화해 주세요.`);
@@ -61,9 +63,9 @@ function StayConsultationForm() {
     <div className="contact-layout"><ContactAside /><form className="contact-form" id="stay-consultation-form" onSubmit={submit}>
       <label><span>상담 유형 *</span><select name="type" required defaultValue={params.get("stayMode") === "workation" ? "워케이션" : "숙박·프로그램 결합"}><option>단체 숙박</option><option>기업·기관 방문</option><option>숙박·프로그램 결합</option><option>식사 포함 일정</option><option>워케이션</option><option>맞춤 견적</option><option>기타 특별 요청</option></select></label>
       <label><span>이름 *</span><input name="name" required autoComplete="name" /></label>
-      <label><span>연락처 *</span><input name="phone" required type="tel" inputMode="tel" autoComplete="tel" placeholder="010-0000-0000" /></label>
+      <label><span>연락처 *</span><input name="phone" required type="tel" inputMode="tel" autoComplete="tel" pattern="0\d{1,2}-?\d{3,4}-?\d{4}" title="휴대전화 번호를 010-0000-0000 형식으로 입력해 주세요." placeholder="010-0000-0000" /></label>
       <label><span>이메일</span><input name="email" type="email" inputMode="email" autoComplete="email" /></label>
-      <label><span>방문 희망일</span><input name="date" type="date" defaultValue={params.get("date") ?? ""} /></label>
+      <label><span>방문 희망일</span><input name="date" type="date" min={today} defaultValue={params.get("date") ?? ""} /></label>
       <label><span>방문 인원</span><input name="guests" type="number" inputMode="numeric" min="1" max="200" defaultValue={params.get("guests") ?? "2"} /></label>
       <label className="full"><span>상담 내용 *</span><textarea name="message" rows={6} required placeholder="숙박, 식사, 프로그램, 단체 일정 중 필요한 내용을 알려주세요." /></label>
       <label className="agree full"><input type="checkbox" required /><span>개인정보 수집·이용 안내를 확인했으며 상담을 위한 정보 제공에 동의합니다. *</span></label>
@@ -77,14 +79,15 @@ function GeneralContactForm() {
   const params = useSearchParams();
   const initialType = useMemo(() => typeMap[params.get("type") ?? ""] ?? (params.get("program") ? "프로그램 문의" : "여행 일정 상담"), [params]);
   const [notice, setNotice] = useState("");
+  const today = new Date().toLocaleDateString("en-CA");
   function submit(event: FormEvent<HTMLFormElement>) {
     openEmailComposer(event, `[열목어마을] ${initialType}`);
     setNotice(`이메일 작성 화면을 열었습니다. 열리지 않으면 ${siteConfig.contact.email}로 보내거나 ${siteConfig.contact.phoneDisplay}로 전화해 주세요.`);
   }
   return <div className="contact-layout"><ContactAside /><form className="contact-form" onSubmit={submit}>
     <label><span>문의 유형 *</span><select name="type" defaultValue={initialType} required><option>여행 일정 상담</option><option>프로그램 문의</option><option>워케이션 문의</option><option>단체 견적 문의</option><option>방문 이야기 보내기</option><option>상품 구매 문의</option><option>기타 문의</option></select></label>
-    <label><span>이름 *</span><input name="name" required autoComplete="name" /></label><label><span>연락처 *</span><input name="phone" required type="tel" inputMode="tel" autoComplete="tel" placeholder="010-0000-0000" /></label><label><span>이메일</span><input name="email" type="email" inputMode="email" autoComplete="email" /></label>
-    <label><span>방문 희망일</span><input name="date" type="date" defaultValue={params.get("date") ?? ""} /></label><label><span>방문 인원</span><input name="guests" type="number" inputMode="numeric" min="1" max="200" defaultValue={params.get("guests") ?? "2"} /></label>
+    <label><span>이름 *</span><input name="name" required autoComplete="name" /></label><label><span>연락처 *</span><input name="phone" required type="tel" inputMode="tel" autoComplete="tel" pattern="0\d{1,2}-?\d{3,4}-?\d{4}" title="휴대전화 번호를 010-0000-0000 형식으로 입력해 주세요." placeholder="010-0000-0000" /></label><label><span>이메일</span><input name="email" type="email" inputMode="email" autoComplete="email" /></label>
+    <label><span>방문 희망일</span><input name="date" type="date" min={today} defaultValue={params.get("date") ?? ""} /></label><label><span>방문 인원</span><input name="guests" type="number" inputMode="numeric" min="1" max="200" defaultValue={params.get("guests") ?? "2"} /></label>
     <label><span>관심 프로그램</span><select name="program" defaultValue={params.get("program") ?? ""}><option value="">아직 정하지 못했어요</option>{Object.entries(programMap).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
     <label className="full"><span>문의 내용 *</span><textarea name="message" rows={6} required placeholder="방문 목적과 필요한 프로그램을 알려주세요." /></label><label className="agree full"><input type="checkbox" required /><span>개인정보 수집·이용 안내를 확인했으며 상담을 위한 정보 제공에 동의합니다. *</span></label>
     <div className="form-footer full"><button type="submit" className="button button-primary"><Send size={18} /> 이메일로 문의 보내기</button><p>일반 객실 예약은 네이버 예약을 이용해 주세요.</p></div>{notice && <div className="form-notice full" role="status"><AlertCircle /><p>{notice}</p></div>}

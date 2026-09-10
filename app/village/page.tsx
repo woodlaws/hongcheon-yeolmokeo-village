@@ -133,7 +133,7 @@ export default function VillagePage() {
 
         <section className="village-section village-identity" aria-labelledby="village-identity-title">
           <div className="container village-identity-layout">
-            <Image src="/images/forest-2.jpg" width={960} height={720} alt="맑은 계곡과 울창한 숲이 어우러진 열목어마을 자연 풍경" />
+            <Image src="/images/yeolmokeo-village-panorama-02.jpg" width={960} height={720} alt="산과 하천을 따라 집과 밭이 자리한 열목어마을 전경" />
             <div>
               <p className="section-kicker">THE NAME &amp; PLACE</p>
               <h2 id="village-identity-title">{villageIdentity.title}</h2>

@@ -5,7 +5,7 @@ import Link from "@/components/static-link";
 import { VillagePageFrame } from "@/components/village-page-frame";
 import { villageSources } from "@/data/village-pages";
 
-export const metadata: Metadata = { title: "열목어 이야기｜차가운 계곡에 사는 멸종위기 야생생물", description: "열목어의 생김새, 서식환경, 번식, 보호 지위와 홍천 명개리 열목어 서식지를 공식 자료를 바탕으로 쉽게 소개합니다.", alternates: { canonical: "/village/yeolmokeo" } };
+export const metadata: Metadata = { title: { absolute: "열목어 이야기｜차가운 계곡에 사는 멸종위기 야생생물" }, description: "열목어의 생김새, 서식환경, 번식, 보호 지위와 홍천 명개리 열목어 서식지를 공식 자료를 바탕으로 쉽게 소개합니다.", alternates: { canonical: "/village/yeolmokeo" } };
 const toc = [["fish-about", "열목어는 어떤 물고기인가요?"], ["fish-home", "어떤 환경에서 살아가나요?"], ["fish-village", "열목어와 홍천 열목어마을"], ["fish-protect", "왜 보호해야 하나요?"], ["fish-etiquette", "자연을 배려하며 만나는 방법"], ["fish-faq", "자주 묻는 질문"]] as const;
 const faqs = [
   ["열목어와 산천어는 어떻게 다른가요?", "둘 다 연어과 민물고기지만 서로 다른 종입니다. 열목어는 열목어속, 산천어는 연어속에 속하며 생김새와 생태에도 차이가 있습니다. 사진만으로 혼동하기 쉬우므로 공신력 있는 도감의 분류와 특징을 함께 확인하는 것이 좋습니다."],
@@ -17,7 +17,7 @@ const faqs = [
 ] as const;
 export default function YeolmokeoPage() {
   const faqJson = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) };
-  return <VillagePageFrame eyebrow="YEOLMOKEO ECOLOGY" title="차가운 계곡이 품은 생명, 열목어" description="마을 이름에 담긴 물고기를 정확한 생태 정보와 자연을 배려하는 방법으로 만나보세요." image="/images/forest-2.jpg" imageAlt="열목어가 살아갈 수 있는 차갑고 맑은 산간 계곡 환경">
+  return <VillagePageFrame eyebrow="YEOLMOKEO ECOLOGY" title="차가운 계곡이 품은 생명, 열목어" description="마을 이름에 담긴 물고기를 정확한 생태 정보와 자연을 배려하는 방법으로 만나보세요." image="/images/yeolmokeo-village-panorama-02.jpg" imageAlt="산과 하천을 따라 집과 밭이 자리한 열목어마을 전경">
     <section className="fish-intro"><div className="container"><figure className="fish-real-photo"><Image src="/images/yeolmokeo-real.jpg" width={519} height={354} sizes="(max-width: 767px) calc(100vw - 40px), 500px" alt="몸의 반점과 지느러미를 볼 수 있는 열목어의 옆모습" /><figcaption>열목어의 실제 모습</figcaption></figure><div><p className="section-kicker">QUICK FACTS</p><h2>열목어는 어떤 물고기인가요?</h2><p className="fish-intro-description">열목어는 연어목 연어과 열목어속에 속하는 차가운 물을 좋아하는 민물고기입니다. 등 쪽은 갈색을 띠고 배 쪽은 은백색이며, 몸과 머리에 어두운 갈색의 작은 반점이 나타납니다. 사진에서 머리부터 꼬리까지의 체형과 연어과 물고기의 특징인 작은 기름지느러미를 함께 살펴볼 수 있습니다.</p><div className="fish-facts"><article><Fish /><b>분류</b><span>연어목 연어과 열목어속</span></article><article><Snowflake /><b>서식</b><span>차갑고 깨끗한 산간 계류</span></article><article><ShieldCheck /><b>보호</b><span>멸종위기 야생생물 Ⅱ급</span></article></div><a href={villageSources.nieSpecies} target="_blank" rel="noreferrer" className="text-link">국립생태원 열목어 실물 사진과 정보 보기 <ExternalLink size={15} /></a></div></div></section>
     <section className="fish-reading"><div className="container">
       <aside className="fish-toc"><strong>이 페이지의 목차</strong><nav>{toc.map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav></aside>

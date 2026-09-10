@@ -24,7 +24,7 @@ export const villageIdentity = {
 
 export const natureMoments = [
   { title: "계곡", description: "맑은 물과 시원한 물소리를 가까이에서 만나는 시간", image: "/images/valley-rest.png", alt: "홍천 열목어마을의 바위 사이로 흐르는 맑은 계곡" },
-  { title: "숲", description: "천천히 걷고 깊게 호흡하며 일상의 긴장을 내려놓는 시간", image: "/images/forest-3.jpg", alt: "홍천 열목어마을 주변의 푸른 산촌 숲길" },
+  { title: "숲", description: "천천히 걷고 깊게 호흡하며 일상의 긴장을 내려놓는 시간", image: "/images/yeolmokeo-village-panorama-02.jpg", alt: "산과 하천을 따라 집과 밭이 자리한 열목어마을 전경" },
   { title: "산촌의 밤", description: "도시의 소음과 빛에서 벗어나 조용히 쉬는 시간", image: "/images/quiet-time-3.png", alt: "열목어마을 숲속에서 해먹에 기대어 쉬는 모습" },
   { title: "마을의 아침", description: "깨끗한 공기와 자연의 소리로 시작하는 하루", image: "/images/village-arrival.png", alt: "아침 햇살이 비치는 열목어마을의 산촌 시설" },
 ] as const;

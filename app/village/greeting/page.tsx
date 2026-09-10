@@ -4,7 +4,7 @@ import { ArrowRight, Heart, Leaf, Users } from "lucide-react";
 import Link from "@/components/static-link";
 import { VillagePageFrame } from "@/components/village-page-frame";
 
-export const metadata: Metadata = { title: "인사말｜홍천 열목어마을", description: "깊은 숲과 맑은 물 곁에서 천천히 쉬어가는 분들을 맞이하는 홍천 열목어마을의 환영 인사입니다.", alternates: { canonical: "/village/greeting" } };
+export const metadata: Metadata = { title: { absolute: "인사말｜홍천 열목어마을" }, description: "깊은 숲과 맑은 물 곁에서 천천히 쉬어가는 분들을 맞이하는 홍천 열목어마을의 환영 인사입니다.", alternates: { canonical: "/village/greeting" } };
 
 export default function GreetingPage() {
   return <VillagePageFrame eyebrow="WELCOME TO OUR VILLAGE" title="자연 곁에서 쉬어가는 시간, 열목어마을에 오신 것을 환영합니다" description="서두르던 걸음을 잠시 늦추고, 나와 곁의 사람에게 다시 가까워지는 산촌의 시간입니다." imageAlt="홍천 열목어마을 건물과 넓은 잔디마당 전경">

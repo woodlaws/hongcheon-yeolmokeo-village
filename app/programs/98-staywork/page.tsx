@@ -97,7 +97,7 @@ export default function StayworkPage() {
     url: "https://hongcheon-yeolmokeo.vercel.app/programs/98-staywork",
     image: `https://hongcheon-yeolmokeo.vercel.app${poster}`,
     provider: { "@type": "Organization", name: "홍천 열목어마을", url: "https://hongcheon-yeolmokeo.vercel.app" },
-    offers: { "@type": "Offer", price: "295000", priceCurrency: "KRW", url: siteConfig.naverBookingUrl, description: "가격 적용 기준과 예약 가능 일정은 예약 전 확인이 필요합니다." },
+    offers: { "@type": "Offer", price: "295000", priceCurrency: "KRW", url: siteConfig.stayworkBookingUrl, description: "가격 적용 기준과 예약 가능 일정은 예약 전 확인이 필요합니다." },
   };
 
   return <><SiteHeader /><main className={styles.page}>
@@ -109,7 +109,7 @@ export default function StayworkPage() {
           <p className={styles.heroLead}>숲에서 일하고, 자연에서 쉬는 2박 3일</p>
           <p className={styles.heroText}>청정한 농촌 자연 속에서 일과 휴식, 치유를 함께 경험하며 온전히 나를 돌보는 웰니스 워케이션입니다.</p>
           <div className={styles.badges} aria-label="프로그램 주요 정보"><span>2박 3일</span><span>5인 이상</span><span>업무 공간 제공</span><span>숙박·식사·치유 프로그램</span></div>
-          <div className={styles.heroActions}><NaverBookingLink className="button button-primary" position="staywork-hero">네이버에서 예약하기</NaverBookingLink><a className="button button-outline" href={emailHref}>맞춤 일정 문의 <Mail size={17} aria-hidden="true" /></a></div>
+          <div className={styles.heroActions}><NaverBookingLink href={siteConfig.stayworkBookingUrl} className="button button-primary" position="staywork-hero">네이버에서 예약하기</NaverBookingLink><a className="button button-outline" href={emailHref}>맞춤 일정 문의 <Mail size={17} aria-hidden="true" /></a></div>
         </div>
         <div className={styles.posterWrap}><Image src={poster} alt="홍천 열목어마을 숲과 계곡에서 일하고 쉬는 98 스테이워크" width={1122} height={1402} priority sizes="(max-width: 767px) calc(100vw - 40px), 44vw" /></div>
       </div>
@@ -157,7 +157,7 @@ export default function StayworkPage() {
     </div></section>
 
     <section className={styles.priceSection} aria-labelledby="price-title"><div className={`container ${styles.priceGrid}`}>
-      <div><p>2 NIGHTS · 3 DAYS</p><h2 id="price-title">지금, 나를 회복하는 워케이션을 시작하세요</h2><div className={styles.price}><strong>295,000원</strong><span>5인 이상 운영 확정</span></div><p className={styles.priceNote}>공개된 프로그램 안내 기준이며 가격 적용 기준과 현재 운영 여부는 예약 전 확인해 주세요.</p></div>
+      <div><p>2 NIGHTS · 3 DAYS</p><h2 id="price-title">지금, 나를 회복하는 워케이션을 시작하세요</h2><div className={styles.price}><strong>295,000원</strong><span>5인 이상 운영 기준</span></div><p className={styles.priceNote}>공개된 프로그램 안내 기준이며 가격 적용 기준과 현재 운영 여부는 예약 전 확인해 주세요.</p></div>
       <div className={styles.includes}><h3>포함사항</h3><ul><li><Check />2박 3일 숙박</li><li><Check />공유 업무공간 자유 이용</li><li><Check />지역 제철 식사를 활용한 삼시세끼</li><li><Check />세 가지 농촌 치유 프로그램</li><li><Check />다과 및 휴식 공간</li></ul><p>객실 형태는 프라이빗 또는 혼용 형태 중 인원과 운영 상황에 따라 안내됩니다.</p></div>
     </div></section>
 
@@ -165,7 +165,7 @@ export default function StayworkPage() {
 
     <section className={styles.booking} aria-labelledby="booking-title"><div className={`container ${styles.bookingGrid}`}>
       <div><p className={styles.eyebrow}>BOOKING & CONTACT</p><h2 id="booking-title">현재 일정과 운영 여부를 확인해 주세요</h2><p>네이버 예약 상품의 현재 일정과 가격이 홈페이지 안내와 다를 경우 네이버 예약 및 담당자 안내를 우선합니다.</p></div>
-      <div className={styles.contactCard}><NaverBookingLink className="button button-primary" position="staywork-bottom">네이버에서 예약 확인</NaverBookingLink><PhoneReservationLink className="button button-outline" position="staywork-bottom"><Phone size={17} aria-hidden="true" />전화로 문의</PhoneReservationLink><a className="button button-outline" href={emailHref}><Mail size={17} aria-hidden="true" />이메일 문의</a><dl><div><dt>예약문의</dt><dd><a href={siteConfig.contact.phoneHref}>{siteConfig.contact.phoneDisplay}</a></dd></div><div><dt>이메일</dt><dd><a href={emailHref}>{siteConfig.contact.email}</a></dd></div></dl></div>
+      <div className={styles.contactCard}><NaverBookingLink href={siteConfig.stayworkBookingUrl} className="button button-primary" position="staywork-bottom">네이버에서 예약 확인</NaverBookingLink><PhoneReservationLink className="button button-outline" position="staywork-bottom"><Phone size={17} aria-hidden="true" />전화로 문의</PhoneReservationLink><a className="button button-outline" href={emailHref}><Mail size={17} aria-hidden="true" />이메일 문의</a><dl><div><dt>예약문의</dt><dd><a href={siteConfig.contact.phoneHref}>{siteConfig.contact.phoneDisplay}</a></dd></div><div><dt>이메일</dt><dd><a href={emailHref}>{siteConfig.contact.email}</a></dd></div></dl></div>
     </div></section>
     <div className="container"><TravelBanner /></div>
     <section className={styles.backLink}><Link href="/programs">다른 치유 프로그램도 살펴보기</Link></section>

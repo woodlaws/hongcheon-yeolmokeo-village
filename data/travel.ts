@@ -21,7 +21,7 @@ export const themeFilters: TravelTheme[] = ["계곡", "숲", "산책", "등산",
 export const travelAttractions = [
   {
     id: "tongmareum-valley",
-    name: "통마름계곡",
+    name: "통마람계곡",
     type: "계곡·산책",
     summary: "골짜기를 따라 불어오는 시원한 바람과 맑고 차가운 계류를 만날 수 있는 열목어마을의 자연 쉼터입니다.",
     season: "여름",
@@ -32,12 +32,12 @@ export const travelAttractions = [
     distanceFilter: "front",
     themes: ["계곡", "산책", "가족 여행"],
     image: "/images/valley-rest.png",
-    imageAlt: "홍천 열목어마을 앞 통마름계곡 여행을 안내하는 맑은 계곡 활동 이미지",
+    imageAlt: "홍천 열목어마을 앞 통마람계곡 여행을 안내하는 맑은 계곡 활동 이미지",
     imageCredit: "홍천애홀릭·기존 프로젝트 자산 — 열목어마을 계곡 활동",
     imageCreditUrl: travelSources.hcholic,
     detailUrl: travelSources.village,
     mapUrl: "https://map.naver.com/p/search/홍천%20통마람계곡",
-    note: "공식 관광자료에는 ‘통마람계곡·통마람약수’로도 표기됩니다. 현장 진입 동선을 먼저 확인해 주세요.",
+    note: "홍천군 문화관광포털의 ‘통마람계곡’ 표기를 따릅니다. 현장 진입 동선을 먼저 확인해 주세요.",
   },
   {
     id: "sambong-forest",
@@ -122,8 +122,8 @@ export const travelAttractions = [
 ] as const;
 
 export const travelCourses = [
-  { id: "day", label: "코스 A", title: "가볍게 즐기는 당일 여행", schedule: "당일", audience: "가족·부부·가벼운 숲 여행", season: "봄·여름·가을", steps: ["열목어마을", "통마름계곡", "삼봉자연휴양림·삼봉약수", "귀가"], note: "입장 가능 시간과 이동시간은 출발 당일 지도와 숲나들e에서 확인해 주세요." },
-  { id: "overnight", label: "코스 B", title: "제대로 쉬어가는 1박 2일", schedule: "1박 2일", audience: "개인·가족·부모님 동반", season: "사계절", steps: ["1일차 · 열목어마을 도착과 체험", "통마름계곡 산책", "열목어마을 숙박", "2일차 · 아침 식사", "삼봉자연휴양림·삼봉약수", "계절 관광지와 귀가"], note: "숙박·식사·체험 운영 여부와 관광지 개방일을 각각 확인해 주세요." },
+  { id: "day", label: "코스 A", title: "가볍게 즐기는 당일 여행", schedule: "당일", audience: "가족·부부·가벼운 숲 여행", season: "봄·여름·가을", steps: ["열목어마을", "통마람계곡", "삼봉자연휴양림·삼봉약수", "귀가"], note: "입장 가능 시간과 이동시간은 출발 당일 지도와 숲나들e에서 확인해 주세요." },
+  { id: "overnight", label: "코스 B", title: "제대로 쉬어가는 1박 2일", schedule: "1박 2일", audience: "개인·가족·부모님 동반", season: "사계절", steps: ["1일차 · 열목어마을 도착과 체험", "통마람계곡 산책", "열목어마을 숙박", "2일차 · 아침 식사", "삼봉자연휴양림·삼봉약수", "계절 관광지와 귀가"], note: "숙박·식사·체험 운영 여부와 관광지 개방일을 각각 확인해 주세요." },
   { id: "autumn", label: "코스 C", title: "가을 사진 여행", schedule: "당일 또는 1박 2일", audience: "부부·친구·사진 여행자", season: "가을 개방 기간", steps: ["열목어마을", "홍천 은행나무숲", "주변 숲길", "열목어마을 숙박"], note: "은행나무숲의 해당 연도 개방 기간을 확인한 뒤 일정을 정해 주세요." },
   { id: "mountain", label: "코스 D", title: "산과 숲 집중 여행", schedule: "반나절 이상", audience: "등산객·자연 여행객", season: "탐방 가능 시기", steps: ["열목어마을", "계방산 또는 오대산 권역", "열목어마을 휴식"], note: "산행 난이도와 입산시간, 탐방로 통제, 일몰 시간을 먼저 확인해 주세요." },
 ] as const;

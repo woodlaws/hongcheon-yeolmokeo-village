@@ -10,7 +10,7 @@ import { commonFacilities, facilities, facilityMap } from "@/data/facilities";
 import { villageOfficial, villageSources } from "@/data/village-pages";
 
 export const metadata: Metadata = {
-  title: "시설 안내｜홍천 열목어마을",
+  title: { absolute: "시설 안내｜홍천 열목어마을" },
   description: "홍천 열목어마을의 보금자리, 사랑방, 교육 공간과 확인된 공용시설을 살펴보고 숙박·단체 이용을 문의하세요.",
   alternates: { canonical: "/village/facilities" },
   openGraph: { title: "열목어마을 시설 안내", description: "방문 전, 머무르고 함께하는 공간을 살펴보세요.", images: [{ url: "/images/village-main-hero.jpg", alt: "홍천 열목어마을 시설 외관" }] },

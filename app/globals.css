@@ -141,3 +141,40 @@ main:has(.contact-request-section) .page-hero{min-height:330px}.contact-request-
 .village-greeting-photo{position:static;min-width:0;min-height:0}
 .village-greeting-photo img{width:100%;height:auto;display:block;object-fit:contain;object-position:center}
 @media(max-width:767px){.village-greeting-layout{grid-template-columns:1fr}.village-greeting-photo{max-width:440px;margin-inline:auto;aspect-ratio:auto}}
+
+/* Group page editorial photography */
+.group-heading>p:not(.section-kicker){margin:14px auto 0;color:#647168;font-size:17px;line-height:1.75}
+.group-staged-note{display:block;margin-top:13px;color:#76827b;font-size:13px;line-height:1.55}
+.group-program-photo,.group-element-photo,.group-bundle-photo{position:relative;min-width:0;aspect-ratio:16/9;margin:0;overflow:hidden;background:#dfe7e2}
+.group-program-photo img,.group-element-photo img,.group-bundle-photo img{object-fit:cover;object-position:center}
+.group-audience-grid article{min-height:760px;padding:0;overflow:hidden}
+.group-audience-card-body{min-width:0;min-height:0;padding:25px 26px 27px;display:flex;flex:1;flex-direction:column}
+.group-audience-card-body h3{margin:22px 0 7px;font-size:24px;line-height:1.35;word-break:keep-all}
+.group-audience-card-body>b{color:#647168;font-size:15px;line-height:1.55}
+.group-audience-card-body h4{margin:21px 0 7px;color:var(--stream);font-size:14px}
+.group-audience-card-body>p{margin:0;color:#4e5d55;font-size:16px;line-height:1.7}
+.group-audience-card-body ul{margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;list-style:none}
+.group-audience-card-body li{display:flex;align-items:flex-start;gap:6px;color:#536159;font-size:15px;line-height:1.55}
+.group-audience-card-body li svg{flex:none;margin-top:4px;color:var(--forest)}
+.group-audience-card-body>small{margin:16px 0 0;padding:11px;display:flex;gap:7px;background:#f7f1e8;color:#725f4d;font-size:13px;line-height:1.55}
+.group-audience-card-body>small svg{flex:none;margin-top:3px}
+.group-elements .group-staged-note{color:#a8bfb5}
+.group-element-grid{gap:12px;border:0}
+.group-element-grid article{min-height:455px;padding:0;overflow:hidden;border:1px solid rgb(255 255 255 / 20%);background:rgb(255 255 255 / 4%)}
+.group-element-body{min-width:0;padding:22px 22px 24px;display:flex;flex:1;flex-direction:column}
+.group-element-body>span{font:700 22px/1 Georgia,serif;color:#8eb8a8}
+.group-element-body h3{margin:13px 0 13px;font-size:24px}
+.group-element-body ul{margin:0;padding-left:18px;color:#e0e8e4;font-size:16px;line-height:1.6}
+.group-element-body li{margin:5px 0}
+.group-element-body small{margin-top:auto;padding-top:18px;color:#a8c9bc;font-size:13px;line-height:1.5}
+.group-element-body p{margin:8px 0 0;color:#d1ded8;font-size:13px;line-height:1.5}
+.group-bundle-grid article{min-height:480px;padding:0;overflow:hidden}
+.group-bundle-body{min-width:0;padding:25px 27px 28px;display:flex;flex:1;flex-direction:column}
+.group-bundle-body>svg{width:31px;height:31px;color:var(--forest)}
+.group-bundle-body h3{margin:18px 0 10px;font-size:25px}
+.group-bundle-body p{margin:0;color:#4f5e56;font-size:16px;line-height:1.7}
+.group-bundle-body small{margin-top:16px;padding:11px;background:#f7f1e8;color:#725f4d;font-size:14px;line-height:1.6}
+.group-bundle-body .text-link{margin-top:auto;padding-top:20px}
+@media(max-width:1100px){.group-audience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.group-element-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.group-audience-grid article{min-height:720px}.group-element-grid article{min-height:430px}}
+@media(max-width:767px){.group-heading>p:not(.section-kicker){font-size:16px}.group-audience-grid,.group-element-grid,.group-bundle-grid{grid-template-columns:1fr}.group-audience-grid article,.group-element-grid article,.group-bundle-grid article{min-height:0;padding:0}.group-audience-card-body{padding:23px 20px 24px}.group-audience-card-body>p,.group-element-body ul,.group-bundle-body p{font-size:16px}.group-audience-card-body ul{grid-template-columns:1fr}.group-card-actions{margin-top:24px;padding-top:0}.group-element-body{padding:20px 20px 23px}.group-element-body small{margin-top:18px}.group-bundle-body{padding:23px 20px 25px}.group-program-photo,.group-element-photo,.group-bundle-photo{aspect-ratio:16/9}}
+@media print{.group-program-photo,.group-element-photo,.group-bundle-photo,.group-staged-note{display:none}.group-audience-card-body,.group-element-body,.group-bundle-body{padding:20px}}

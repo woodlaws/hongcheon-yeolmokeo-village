@@ -1,6 +1,7 @@
 const defaultNaverBookingUrl = "https://m.booking.naver.com/booking/3/bizes/853337";
 const defaultStayworkBookingUrl = "https://m.booking.naver.com/booking/3/bizes/853337/items/7925129?area=plt&lang=ko&tab=book&theme=place";
 const officialAddress = "강원특별자치도 홍천군 내면 명개로 98";
+const mapQuery = encodeURIComponent(officialAddress);
 
 export const siteConfig = {
   name: "홍천 열목어마을",
@@ -23,8 +24,9 @@ export const siteConfig = {
   structuredAddress: officialAddress,
   latitude: null,
   longitude: null,
-  mapUrl: "https://map.naver.com/p/search/%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%ED%99%8D%EC%B2%9C%EA%B5%B0%20%EB%82%B4%EB%A9%B4%20%EB%AA%85%EA%B0%9C%EB%A1%9C%2098",
-  googleMapEmbedUrl: "https://maps.google.com/maps?q=%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%ED%99%8D%EC%B2%9C%EA%B5%B0%20%EB%82%B4%EB%A9%B4%20%EB%AA%85%EA%B0%9C%EB%A1%9C%2098&z=15&output=embed",
+  mapUrl: `https://map.naver.com/p/search/${mapQuery}`,
+  kakaoMapUrl: `https://map.kakao.com/?q=${mapQuery}`,
+  googleMapEmbedUrl: `https://maps.google.com/maps?q=${mapQuery}&output=embed&hl=ko&z=17`,
 } as const;
 
 export interface Program {

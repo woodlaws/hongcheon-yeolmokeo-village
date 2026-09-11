@@ -11,6 +11,7 @@ export const villageOfficial = {
   phoneDisplay: siteConfig.contact.phoneDisplay,
   phoneHref: siteConfig.contact.phoneHref,
   naverMap: siteConfig.mapUrl,
+  kakaoMap: siteConfig.kakaoMapUrl,
   googleEmbed: siteConfig.googleMapEmbedUrl,
 } as const;
 

@@ -47,7 +47,7 @@ export default function StoriesPage() {
 
     <section className="stories-seasons" aria-labelledby="seasons-title"><div className="container">
       <div className="stories-heading"><p className="section-kicker">LETTERS FROM THE SEASONS</p><h2 id="seasons-title">계절이 바뀔 때마다,<br />마을의 표정도 달라집니다</h2><p>추천 체험은 기후와 운영 상황에 따라 달라질 수 있으니 방문 전에 확인해 주세요.</p></div>
-      <div className="stories-season-grid">{storySeasons.map((item) => <article key={item.season}><div className="stories-season-image"><Image src={item.image} alt={item.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 300px" /></div><div><span>{item.season}</span><h3>{item.title}</h3><dl><div><dt>추천 경험</dt><dd>{item.experience}</dd></div><div><dt>방문 팁</dt><dd>{item.tip}</dd></div></dl><Link href={item.href}>관련 이야기 읽기 <ArrowRight size={16} aria-hidden="true" /></Link><Link href={`/contact?type=trip&season=${item.season}`} className="button button-outline">이 계절에 방문하기</Link></div></article>)}</div>
+      <div className="stories-season-grid">{storySeasons.map((item) => <article key={item.season}><div className="stories-season-image"><Image src={item.image} alt={item.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1100px) 50vw, 300px" /></div><div><span>{item.season}</span><h3>{item.title}</h3>{"credit" in item && <small>사진: {item.credit}</small>}<dl><div><dt>추천 경험</dt><dd>{item.experience}</dd></div><div><dt>방문 팁</dt><dd>{item.tip}</dd></div></dl><Link href={item.href}>관련 이야기 읽기 <ArrowRight size={16} aria-hidden="true" /></Link><Link href={`/contact?type=trip&season=${item.season}`} className="button button-outline">이 계절에 방문하기</Link></div></article>)}</div>
     </div></section>
 
     <section className="stories-history" aria-labelledby="history-title"><div className="container">
@@ -61,3 +61,4 @@ export default function StoriesPage() {
     <section className="stories-final" aria-labelledby="stories-final-title"><Image src="/images/yeolmokeo-village-panorama-02.jpg" alt="산과 하천을 따라 집과 밭이 자리한 열목어마을 전경" fill sizes="100vw" /><div /><div className="container"><p>다음 장면은, 직접 머무는 시간</p><h2 id="stories-final-title">이야기 속 풍경을 직접 만나보세요</h2><span>숲과 물이 건네는 조용한 쉼, 열목어마을에서 시작됩니다.</span><div><Link href="/programs" className="button button-light">치유 프로그램 보기</Link><Link href="/stay" className="button button-ghost">숙소 살펴보기</Link><Link href="/contact" className="button button-ghost">방문 상담하기</Link></div></div></section>
   </main><SiteFooter /><MobileCta /></>;
 }
+

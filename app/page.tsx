@@ -1,3 +1,4 @@
+import { ginkgoImages } from "@/data/ginkgo";
 import Image from "next/image";
 import Link from "@/components/static-link";
 import { ArrowRight, BedDouble, Mountain, Sprout, Trees, Users, Utensils } from "lucide-react";
@@ -47,7 +48,7 @@ export default function Home() {
 
       <section className="stay-time"><div className="container"><header className="section-heading"><p className="section-kicker">SLOW ITINERARY</p><h2>머무는 시간에 따라 달라지는 쉼</h2></header><div className="itinerary-grid">{itineraries.map((plan,index)=><article key={plan.duration}><div className="itinerary-number">0{index+1}</div><p className="meta">{plan.duration}</p><h3>{plan.title}</h3><ul>{plan.items.map(item=><li key={item}>{item}</li>)}</ul><p className="status">{plan.includes}</p><Link href="/guide" className="text-link">자세히 보기 <ArrowRight size={17}/></Link></article>)}</div></div></section>
 
-      <section className="home-travel-section"><div className="container"><header className="section-heading left"><p className="section-kicker">AROUND THE VILLAGE</p><h2>머무는 동안, 홍천의 자연을 더 만나보세요</h2><p>열목어마을을 거점으로 가까운 숲과 계절 여행지를 천천히 둘러보세요.</p></header><div className="home-travel-grid">{homeTravelPlaces.map((place) => <article key={place.id}><div><Image src={place.image} alt={place.imageAlt} fill sizes="(max-width: 767px) calc(100vw - 40px), 32vw" /><span>{place.badge}</span></div><section><p>{place.type}</p><h3>{place.name}</h3><span>{place.summary}</span><Link href="/travel">여행 정보 보기 <ArrowRight size={16} /></Link></section><small>사진: {place.imageCredit}</small></article>)}</div><div className="home-travel-more"><Link href="/travel" className="button button-primary">주변 여행지 전체 보기 <ArrowRight size={17} /></Link></div></div></section>
+      <section className="home-travel-section"><div className="container"><header className="section-heading left"><p className="section-kicker">AROUND THE VILLAGE</p><h2>머무는 동안, 홍천의 자연을 더 만나보세요</h2><p>열목어마을을 거점으로 가까운 숲과 계절 여행지를 천천히 둘러보세요.</p></header><div className="home-travel-grid">{homeTravelPlaces.map((place) => <article key={place.id}><div><Image src={place.id === "ginkgo-forest" ? ginkgoImages.card.src : place.image} alt={place.id === "ginkgo-forest" ? ginkgoImages.card.alt : place.imageAlt} fill sizes="(max-width: 767px) calc(100vw - 40px), 32vw" /><span>{place.badge}</span></div><section><p>{place.type}</p><h3>{place.name}</h3><span>{place.summary}</span><Link href={place.id === "ginkgo-forest" ? place.detailUrl : "/travel"}>여행 정보 보기 <ArrowRight size={16} /></Link></section><small>사진: {place.imageCredit}</small></article>)}</div><div className="home-travel-more"><Link href="/travel" className="button button-primary">주변 여행지 전체 보기 <ArrowRight size={17} /></Link></div></div></section>
 
       <section className="home-section container"><div className="feature-split"><Image src="/images/stay-room.png" alt="열목어마을의 정갈한 객실" width={900} height={680}/><div><p className="section-kicker">STAY</p><h2>숲과 계곡 가까이에서 보내는 편안한 밤</h2><p>보금자리, 비움센터, 한옥숙소로 안내되는 산촌의 잠자리. 실시간 예약 가능 일정과 이용금액은 네이버 예약에서 확인해 주세요.</p><ul>{stayRooms.slice(0,3).map(stay=><li key={stay.name}><b>{stay.name}</b><span>{stay.roomConfigurations.join(" · ")}</span></li>)}</ul><div className="inline-actions"><Link href="/stay" className="button button-primary">숙소 자세히 보기</Link><NaverBookingLink className="button button-outline" position="home-stay">네이버에서 예약하기</NaverBookingLink></div></div></div></section>
 
@@ -62,3 +63,4 @@ export default function Home() {
     <SiteFooter/><MobileCta/>
   </>;
 }
+

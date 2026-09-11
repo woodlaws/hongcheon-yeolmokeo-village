@@ -1,3 +1,4 @@
+import { ginkgoImages, ginkgoCredit } from "./ginkgo";
 export type StoryCategory =
   | "마을 소식"
   | "치유의 기록"
@@ -195,7 +196,7 @@ export const stories: Story[] = [
 export const storySeasons = [
   { season: "봄", title: "산나물과 어린 숲", image: "/images/village-vision-3.jpg", alt: "초록 산나물과 봄 산촌 풍경", experience: "산나물과 새로 돋는 숲빛 관찰", tip: "큰 일교차에 대비할 겉옷과 편한 신발", href: "/stories/spring-gomchwi" },
   { season: "여름", title: "맑은 계곡과 짙은 녹음", image: "/images/valley-rest.png", alt: "짙은 여름 숲 사이의 맑은 계곡", experience: "숲길 걷기와 물소리에 귀 기울이는 쉼", tip: "우천 뒤 수위 확인과 미끄럼 방지 신발", href: "/stories/summer-valley-morning" },
-  { season: "가을", title: "구룡령과 은행나무숲의 색", image: "/images/guide-autumn.jpg", alt: "노랗게 물든 홍천 은행나무숲의 가을", experience: "천천히 걷는 단풍길과 산촌 풍경", tip: "혼잡 시간과 주변 관광지 개방 여부 확인", href: "/guide#seasons-title" },
+  { season: "가을", title: "황금빛 은행나무숲의 가을", image: ginkgoImages.list.src, alt: ginkgoImages.list.alt, credit: ginkgoCredit, experience: "천천히 걷는 단풍길과 산촌 풍경", tip: "혼잡 시간과 주변 관광지 개방 여부 확인", href: "/travel/ginkgo-forest" },
   { season: "겨울", title: "고요한 산촌과 따뜻한 쉼", image: "/images/guide-winter.jpg", alt: "눈 덮인 강원 산촌의 겨울 풍경", experience: "따뜻한 실내 휴식과 고요한 풍경", tip: "도로 결빙과 난방·숙박 가능 여부 사전 확인", href: "/guide#seasons-title" },
 ] as const;
 
@@ -212,3 +213,4 @@ export function getStory(slug: string) {
 export function formatStoryDate(date: string) {
   return new Intl.DateTimeFormat("ko-KR", { year: "numeric", month: "long", day: "numeric", timeZone: "Asia/Seoul" }).format(new Date(`${date}T00:00:00+09:00`));
 }
+

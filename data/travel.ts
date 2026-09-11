@@ -1,3 +1,4 @@
+import { ginkgoImages, ginkgoCredit, ginkgoSource } from "./ginkgo";
 export type DistanceFilter = "front" | "under20" | "halfday";
 export type TravelTheme = "계곡" | "숲" | "산책" | "등산" | "사진 명소" | "가족 여행" | "계절 명소";
 
@@ -62,8 +63,8 @@ export const travelAttractions = [
   {
     id: "ginkgo-forest",
     name: "홍천 은행나무숲",
-    type: "숲·사진",
-    summary: "약 2,000여 그루의 은행나무가 황금빛 풍경을 만드는 홍천의 대표적인 가을 명소입니다.",
+    type: "가을 명소 · 은행나무길 · 사진 여행",
+    summary: "가을이면 약 2,000그루의 은행나무가 황금빛으로 물드는 홍천의 대표적인 계절 여행지입니다.",
     season: "가을",
     audience: "부부 · 사진 여행 · 부모님 동반",
     badge: "가을 한정",
@@ -71,11 +72,11 @@ export const travelAttractions = [
     travelTime: "차량 시간은 지도에서 확인",
     distanceFilter: "under20",
     themes: ["숲", "사진 명소", "가족 여행", "계절 명소"],
-    image: "/images/guide-autumn.jpg",
-    imageAlt: "홍천 은행나무숲 가을 여행 카드에 사용한 강원도 가을 산악 분위기 이미지",
-    imageCredit: "Christophe95·Wikimedia Commons·CC BY-SA 4.0 — 강원도 가을 산악 참고 이미지",
-    imageCreditUrl: "https://commons.wikimedia.org/wiki/File:Landscape_in_Seoraksan_National_Park_1.jpg",
-    detailUrl: travelSources.ginkgo,
+    image: ginkgoImages.list.src,
+    imageAlt: ginkgoImages.list.alt,
+    imageCredit: ginkgoCredit,
+    imageCreditUrl: ginkgoSource,
+    detailUrl: "/travel/ginkgo-forest",
     mapUrl: "https://map.naver.com/p/search/홍천%20은행나무숲",
     note: "개방 시기와 관람 가능 여부는 방문 전에 반드시 홍천군 문화관광포털에서 확인해 주세요.",
   },
@@ -135,3 +136,4 @@ export const travelFaqs = [
   ["계방산과 오대산 산행 전 무엇을 확인해야 하나요?", "탐방로 통제, 입산시간, 일몰, 기온과 적설을 확인하고 코스 난이도에 맞는 장비를 준비해 주세요."],
   ["운영시간과 입장료는 어디서 확인하나요?", "휴양림은 숲나들e, 국립공원은 국립공원공단, 계절 관광지는 홍천군 문화관광포털의 최신 안내를 기준으로 확인해 주세요."],
 ] as const;
+

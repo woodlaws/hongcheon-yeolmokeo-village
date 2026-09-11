@@ -1,3 +1,4 @@
+import { ginkgoImages, ginkgoCredit, ginkgoSource } from "./ginkgo";
 import { siteConfig } from "@/data/site";
 
 export const guideSources = {
@@ -61,7 +62,7 @@ export const themeRoutes = [
 export const seasons = [
   { id: "spring", name: "봄", image: "/images/farm-experience.png", alt: "봄철 홍천 산촌에서 식물을 관찰하는 한국인 가족", items: ["숲의 새순", "산나물과 농촌체험", "가벼운 산책", "큰 일교차 준비"], credit: "홍천애홀릭·기존 프로젝트 자산", creditUrl: "https://www.hcholic.com/219" },
   { id: "summer", name: "여름", image: "/images/valley-rest.png", alt: "여름철 홍천 열목어마을의 맑은 계곡과 숲", items: ["맑은 계곡", "숲 그늘", "물놀이와 냉족욕", "우천·계곡 수위 확인"], credit: "홍천애홀릭·기존 프로젝트 자산", creditUrl: "https://www.hcholic.com/219" },
-  { id: "autumn", name: "가을", image: "/images/guide-autumn.jpg", alt: "가을 단풍이 물들기 시작한 강원도 설악산의 실제 산악 풍경", items: ["단풍", "홍천 은행나무숲", "제철 농산물", "주말 교통과 개방 일정 확인"], credit: "Christophe95 · Wikimedia Commons · CC BY-SA 4.0", creditUrl: "https://commons.wikimedia.org/wiki/File:Landscape_in_Seoraksan_National_Park_1.jpg" },
+  { id: "autumn", name: "가을", image: ginkgoImages.path.src, alt: ginkgoImages.path.alt, items: ["단풍", "홍천 은행나무숲", "제철 농산물", "주말 교통과 개방 일정 확인"], credit: ginkgoCredit, creditUrl: ginkgoSource },
   { id: "winter", name: "겨울", image: "/images/guide-winter.jpg", alt: "폭설이 내린 강원도 영동 산림의 실제 겨울 풍경", items: ["조용한 산촌", "따뜻한 족욕과 밥상", "설경", "도로 결빙과 월동장비 확인"], credit: "콩가루 · Wikimedia Commons · CC BY-SA 3.0", creditUrl: "https://commons.wikimedia.org/wiki/File:%EC%98%81%EB%8F%99%EC%A7%80%EB%B0%A9_%ED%8F%AD%EC%84%A4_2014-02-10_15-18.jpg" },
 ] as const;
 
@@ -103,3 +104,4 @@ export const guideFaqs = [
   ["고령자나 보행이 불편한 사람도 방문할 수 있나요?", "대한민국 구석구석에는 열목어마을의 무장애 편의시설이 제한적으로 안내됩니다. 이동 동선과 시설 이용 가능 여부를 사전에 상담해 주세요."],
   ["어떤 주소를 내비게이션에 입력해야 하나요?", `마을 대표 주소는 ${siteConfig.address}입니다. 시설별 별도 집결지가 안내된 경우에는 예약 안내를 따라주세요.`],
 ] as const;
+

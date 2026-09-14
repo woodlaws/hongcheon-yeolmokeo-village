@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: { title: "홍천 열목어마을", description: "자연이 주는 쉼, 다시 살아가는 힘", type: "website", locale: "ko_KR", siteName: "홍천 열목어마을" },
   twitter: { card: "summary", title: "홍천 열목어마을", description: "자연이 주는 쉼, 다시 살아가는 힘" },
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [{ url: "/favicon-32x32.png?v=2", type: "image/png", sizes: "32x32" }],
+    apple: [{ url: "/apple-touch-icon.png?v=2", type: "image/png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

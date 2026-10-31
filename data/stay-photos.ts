@@ -220,6 +220,18 @@ export const stayPhotoGroups: StayPhotoGroup[] = [
     "id": "community-hall",
     "name": "마을회관 숙소",
     "kind": "lodging",
-    "photos": []
+    "photos": [
+  {
+    "id": "community-hall-exterior",
+    "groupId": "community-hall",
+    "groupName": "마을회관 숙소",
+    "kind": "lodging",
+    "src": "/images/stay-real-v2/community-hall/community-hall-exterior.jpg",
+    "caption": "마을회관 외관",
+    "alt": "마을회관 외관",
+    "width": 1450,
+    "height": 1100
+  }
+]
   }
 ];

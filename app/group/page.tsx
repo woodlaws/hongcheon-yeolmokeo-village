@@ -44,7 +44,7 @@ const elementImages = [
 ] as const;
 
 const bundleItems = [
-  { icon: BedDouble, title: "숙박", image: "/images/stay-room.png", alt: "홍천 열목어마을 숙박 객실 내부", description: "보금자리 독채·비움센터·한옥 숙소·워케이션 객실", note: "희망 날짜와 전체 인원을 알려주시면 객실 구성을 안내합니다.", href: "/stay", linkLabel: "숙소 자세히 보기" },
+  { icon: BedDouble, title: "숙박", image: "/images/stay-room.png", alt: "홍천 열목어마을 숙박 객실 내부", description: "보금자리 독채·비움센터·한옥 숙소·마을회관 숙소", note: "희망 날짜와 전체 인원을 알려주시면 객실 구성을 안내합니다.", href: "/stay", linkLabel: "숙소 자세히 보기" },
   { icon: Utensils, title: "식사", image: "/images/healing-table.jpg", alt: "지역 식재료로 차린 열목어마을 치유밥상", description: "지역 농산물 치유밥상·산채와 제철 식재료·조식·점심·저녁·다과와 차", note: "횟수·메뉴·알레르기·채식 대응은 견적 요청에 적어주세요." },
   { icon: BriefcaseBusiness, title: "공간", image: "/images/singing-bowl.png", alt: "열목어마을 야외 데크와 체험 공간에서 진행하는 치유 활동", description: "사랑방·비움센터 업무공간·체험 공간·다목적 공간·조망대·야외 쉼터", note: "필요한 장비·배치·차량 정보를 알려주시면 이용 공간을 안내합니다." },
 ] as const;

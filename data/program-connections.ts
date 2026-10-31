@@ -40,8 +40,8 @@ export const programConnections: Record<ProgramSlug, {
     stories: [{ slug: "workcation-three-days", label: "워케이션 구성 이야기", reason: "업무·숙박·치유 활동을 한 일정에 엮은 체류 흐름을 살펴봅니다." }],
   },
   "burnout-retreat": {
-    listImage: "/images/healing-real/singing-bowl/01-bowls.jpg",
-    listAlt: "실제 체험에 사용된 싱잉볼",
+    listImage: "/images/healing-real/singing-bowl/02-guide.jpg",
+    listAlt: "야외 싱잉볼 체험 진행 모습",
     activities: [
       { src: "/images/quiet-time-3.png", alt: "소나무 숲의 해먹에서 휴대기기 없이 고요히 쉬는 사람", title: "디지털 기기에서 잠시 떨어지기", description: "연락과 업무의 속도를 내려놓고 아무것도 하지 않는 시간을 확보합니다." },
       { src: "/images/singing-bowl.png", alt: "열목어마을 야외 공간에서 싱잉볼을 들고 소리 명상을 안내하는 진행자", title: "싱잉볼과 호흡", description: "울림에 귀 기울이며 호흡과 지금의 감각을 천천히 알아차립니다." },

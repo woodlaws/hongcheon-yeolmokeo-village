@@ -1,3 +1,4 @@
+// Homepage publication permission for all adults, minors and supplied photos confirmed by the user.
 const groups = [
   {
     "id": "singing-bowl",
@@ -15,7 +16,7 @@ const groups = [
         "alt": "실제 체험에 사용된 싱잉볼",
         "width": 1600,
         "height": 1600,
-        "noIdentifiableFace": true
+        "publicationAllowed": true
       },
       {
         "id": "singing-bowl-guide",
@@ -26,7 +27,7 @@ const groups = [
         "alt": "야외 싱잉볼 체험 진행 모습",
         "width": 1600,
         "height": 1600,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       },
       {
         "id": "singing-bowl-participant-01",
@@ -37,7 +38,7 @@ const groups = [
         "alt": "싱잉볼을 직접 울려보는 참여자 1",
         "width": 1600,
         "height": 1600,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       },
       {
         "id": "singing-bowl-participant-02",
@@ -48,7 +49,7 @@ const groups = [
         "alt": "싱잉볼을 직접 울려보는 참여자 2",
         "width": 1600,
         "height": 1600,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       }
     ]
   },
@@ -68,7 +69,7 @@ const groups = [
         "alt": "숲속 해먹에서 쉬어가는 실제 방문 모습",
         "width": 1600,
         "height": 1600,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       },
       {
         "id": "forest-rest-hammock-02",
@@ -79,7 +80,7 @@ const groups = [
         "alt": "해먹에 기대어 머무는 숲속 휴식 장면",
         "width": 1600,
         "height": 1200,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       }
     ]
   },
@@ -99,7 +100,7 @@ const groups = [
         "alt": "족욕 공간에서 함께 쉬는 참여자들",
         "width": 1600,
         "height": 1200,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       },
       {
         "id": "footbath-detail",
@@ -110,7 +111,7 @@ const groups = [
         "alt": "실제 족욕 체험 장면",
         "width": 1600,
         "height": 1200,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       }
     ]
   },
@@ -130,7 +131,7 @@ const groups = [
         "alt": "나무 사이로 이어지는 실제 숲길",
         "width": 900,
         "height": 1600,
-        "noIdentifiableFace": true
+        "publicationAllowed": true
       },
       {
         "id": "forest-walk-walk",
@@ -141,7 +142,7 @@ const groups = [
         "alt": "숲길을 걷는 실제 방문 장면",
         "width": 1600,
         "height": 1600,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       }
     ]
   },
@@ -161,7 +162,7 @@ const groups = [
         "alt": "아이와 어른이 함께한 숲속 방문 모습",
         "width": 1600,
         "height": 1600,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       },
       {
         "id": "family-nature-season",
@@ -172,10 +173,10 @@ const groups = [
         "alt": "가을 풍경 속 아이 동반 방문 모습",
         "width": 1200,
         "height": 1600,
-        "noIdentifiableFace": false
+        "publicationAllowed": true
       }
     ]
   }
 ];
-export function healingGroups(slug:string){const preview=process.env.HEALING_PHOTO_PREVIEW === "1";return groups.filter(g=>g.target === `/programs/${slug}`).map(g=>({...g,photos:g.photos.filter(p=>preview||p.noIdentifiableFace)})).filter(g=>g.photos.length);}
+export function healingGroups(slug:string){const preview=process.env.HEALING_PHOTO_PREVIEW === "1";return groups.filter(g=>g.target === `/programs/${slug}`).map(g=>({...g,photos:g.photos.filter(p=>preview||p.publicationAllowed)})).filter(g=>g.photos.length);}
 export const healingPhotoPreview = process.env.HEALING_PHOTO_PREVIEW === "1";

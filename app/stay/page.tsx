@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Bath, BedDouble, BriefcaseBusiness, Check, CircleHelp, CookingPot, HeartPulse, House, Info, Leaf, MapPin, Mountain, PackageCheck, ShowerHead, Trees, Waves } from "lucide-react";
+import { BriefcaseBusiness, Check, CircleHelp, CookingPot, House, Info, Leaf, MapPin, PackageCheck, Trees, Waves } from "lucide-react";
 import Link from "@/components/static-link";
 import { ConsultationLink, NaverBookingLink } from "@/components/booking-links";
 import { MobileCta } from "@/components/mobile-cta";
@@ -10,16 +10,16 @@ import { siteConfig } from "@/data/site";
 import { packingList, refundPolicy, stayFacilities, stayFaqs, stayModes, stayPrograms, stayRooms, stayRules } from "@/data/stay";
 import { TravelBanner } from "@/components/travel-banner";
 
-import { StayGallery, StayRoomPhoto, ClassroomGallery } from "@/components/stay-gallery";
+import { StayGallery, ClassroomGallery } from "@/components/stay-gallery";
 
 const pageUrl = "https://hongcheon-yeolmokeo.vercel.app/stay";
 
 export const metadata: Metadata = {
   title: { absolute: "홍천 열목어마을 숙소｜숲·계곡 가까운 독채와 치유여행 숙박" },
-  description: "홍천 열목어마을의 보금자리 독채, 비움센터, 한옥 숙소와 마을회관 숙소을 소개합니다. 객실과 프로그램, 치유밥상을 연결한 개인·가족·단체 숙박을 상담해 드립니다.",
+  description: "홍천 열목어마을의 보금자리 독채, 비움센터, 한옥 숙소와 마을회관 숙소를 소개합니다. 객실과 프로그램, 치유밥상을 연결한 개인·가족·단체 숙박을 상담해 드립니다.",
   keywords: ["홍천 숙소", "홍천 독채 숙소", "홍천 한옥 숙소", "홍천 단체 숙소", "홍천 워케이션", "홍천 치유여행", "홍천 농촌체험 숙소", "홍천 계곡 숙소", "홍천 가족 숙소", "강원도 힐링 숙소"],
   alternates: { canonical: pageUrl },
-  openGraph: { title: "홍천 열목어마을 숙소｜숲·계곡 가까운 독채와 치유여행 숙박", description: "보금자리 독채, 비움센터, 한옥 숙소와 마을회관 숙소을 비교하고 숙박·치유 프로그램을 함께 상담하세요.", url: pageUrl, type: "website", locale: "ko_KR", siteName: "홍천 열목어마을", images: [{ url: "/images/stay-real-v2/bogumjari/02-room-01.jpg", width: 1200, height: 630, alt: "보금자리 침대 객실" }] },
+  openGraph: { title: "홍천 열목어마을 숙소｜숲·계곡 가까운 독채와 치유여행 숙박", description: "보금자리 독채, 비움센터, 한옥 숙소와 마을회관 숙소를 비교하고 숙박·치유 프로그램을 함께 상담하세요.", url: pageUrl, type: "website", locale: "ko_KR", siteName: "홍천 열목어마을", images: [{ url: "/images/stay-real-v2/bogumjari/02-room-01.jpg", width: 1200, height: 630, alt: "보금자리 침대 객실" }] },
 };
 
 function FacilityIcon({ name }: { name: string }) {
@@ -40,12 +40,6 @@ export default function StayPage() {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJson) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgingJson) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJson) }} />
-
-    <section className="stay-hero" aria-labelledby="stay-title"><Image src="/images/stay-real-v2/bogumjari/02-room-01.jpg" alt="보금자리 침대 객실, 침대 두 개와 창문이 보이는 실제 촬영 사진" fill priority sizes="100vw" /><div className="stay-hero-shade" /><div className="container stay-hero-content"><p className="stay-photo-disclaimer">보금자리 · 실제 촬영한 침대 객실 모습</p><p className="stay-eyebrow">숲과 계곡 가까이에서 보내는 조용한 밤</p><h1 id="stay-title">잘 쉬어야,<span>다시 힘차게 시작할 수 있습니다</span></h1><p>홍천의 맑은 공기와 자연의 소리를 가까이에서 느끼며 편안한 밤을 보내세요. 실시간 예약 가능 일정과 이용금액은 네이버 예약에서 확인해 주세요.</p><div className="stay-hero-actions"><NaverBookingLink className="button button-light" position="stay-hero">네이버에서 예약하기</NaverBookingLink><ConsultationLink className="button button-ghost" href="/contact?type=stay" type="stay" position="stay-hero">숙박·프로그램 상담</ConsultationLink></div></div></section>
-
-    <section className="stay-section stay-features" aria-labelledby="stay-features-title"><div className="container"><div className="stay-heading"><p className="section-kicker">STAY IN NATURE</p><h2 id="stay-features-title">자연 가까이에서 편안하게 머무는 방법</h2><p>일반 관광숙소가 아니라 숲, 계곡, 치유 프로그램과 지역 밥상을 함께 경험할 수 있는 체류형 공간입니다.</p></div><div className="stay-feature-grid">{[{ icon: Mountain, title: "조용한 산촌 환경", text: "자연의 소리에 귀 기울이는 밤" }, { icon: House, title: "독채와 소규모 객실", text: "동행과 목적에 맞는 공간 선택" }, { icon: HeartPulse, title: "치유 프로그램 연계", text: "숲·계곡·명상·족욕을 함께 상담" }, { icon: CookingPot, title: "건강한 식사 선택 가능", text: "식사 포함 여부는 패키지별 상이" }].map(({ icon: Icon, title, text }) => <article key={title}><Icon aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
-
-    <section className="stay-section stay-rooms" id="rooms" aria-labelledby="stay-rooms-title"><div className="container"><div className="stay-heading"><p className="section-kicker">ROOM TYPES</p><h2 id="stay-rooms-title">누구와 머무느냐에 따라 선택하세요</h2><p>실시간 예약 가능 일정과 이용금액은 네이버 예약에서 확인해 주세요. 아래 객실명과 실제 예약 상품 구성은 다를 수 있습니다.</p></div><div className="stay-room-grid">{stayRooms.map(room => <article className="stay-room-card" id={`room-${room.id}`} key={room.id}><StayRoomPhoto roomId={room.id} /><div className="stay-room-card-body"><p className="stay-room-tag">{room.tag}</p><h3>{room.name}</h3><p className="stay-room-summary">{room.summary}</p><dl className="stay-room-facts"><div><dt><BedDouble size={17} /> 객실 구성</dt><dd>{room.roomConfigurations.join(" · ")}</dd></div><div><dt><Bath size={17} /> 화장실</dt><dd>{room.privateBathroom === null ? "예약 상품별 안내" : room.privateBathroom ? "객실 내 단독" : "비움센터 내 공용"}</dd></div><div><dt><ShowerHead size={17} /> 샤워실</dt><dd>{room.privateShower === null ? "예약 상품별 안내" : room.privateShower ? "객실 내 단독" : "비움센터 내 공용"}</dd></div></dl><div className="stay-recommend"><b>이런 분께 추천</b><span>{room.recommendedFor.join(" · ")}</span></div>{room.inventoryNote && <p className="stay-confirm-note"><Info size={16} /> {room.inventoryNote}</p>}<div className="stay-card-actions"><a className="button button-outline" href={`#detail-${room.id}`}>객실 자세히 보기</a>{room.id === "community-hall" ? <ConsultationLink className="button button-primary" href="/contact?type=group" type="group" position="stay-room-community-hall">단체 숙박 상담</ConsultationLink> : <NaverBookingLink className="button button-primary" position={`stay-room-${room.id}`}>네이버 예약</NaverBookingLink>}</div></div></article>)}</div></div></section>
 
     <StayGallery />
 

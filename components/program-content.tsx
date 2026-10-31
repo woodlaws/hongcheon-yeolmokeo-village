@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HealingRealGallery } from "@/components/healing-real-gallery";
 import { ArrowRight, CalendarDays, ExternalLink } from "lucide-react";
 import Link from "@/components/static-link";
 import { programConnections, storyProgramSlugs, type ProgramSlug } from "@/data/program-connections";
@@ -6,10 +7,11 @@ import { formatStoryDate, stories } from "@/data/stories";
 import { programs } from "@/data/site";
 
 export function ProgramActivityGallery({ programSlug }: { programSlug: ProgramSlug }) {
+  if (programSlug === "burnout-retreat") return <HealingRealGallery programSlug={programSlug} />;
   const activities = programConnections[programSlug].activities;
   const hasGenerated = activities.some((activity) => activity.generated);
 
-  return <section className="content-section program-activity-section" aria-labelledby={`${programSlug}-activities-title`}>
+  return <><HealingRealGallery programSlug={programSlug} /><section className="content-section program-activity-section" aria-labelledby={`${programSlug}-activities-title`}>
     <div className="container">
       <p className="section-kicker">PROGRAM MOMENTS</p>
       <h2 id={`${programSlug}-activities-title`}>활동의 장면을 미리 살펴보세요</h2>
@@ -22,7 +24,7 @@ export function ProgramActivityGallery({ programSlug }: { programSlug: ProgramSl
       </div>
       {hasGenerated ? <p className="program-image-disclosure">프로그램 이해를 돕기 위한 연출 이미지가 포함되어 있습니다. 실제 운영 장소와 구성은 상담 시 확인해 주세요.</p> : null}
     </div>
-  </section>;
+  </section></>;
 }
 
 export function ProgramRelatedStories({ programSlug }: { programSlug: ProgramSlug }) {
